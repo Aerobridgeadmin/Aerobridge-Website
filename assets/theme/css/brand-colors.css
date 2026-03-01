@@ -1,0 +1,103 @@
+/* Aerobridge Brand Colors - Applied from Brand Guidelines */
+
+/* Primary Blue #0B3D91 - Headers, buttons, text links */
+.navbar-caption,
+.btn-primary,
+.text-primary,
+h1, h2, h3, h4, h5, h6 {
+  color: #0B3D91 !important;
+}
+
+.btn-primary {
+  background-color: #0B3D91 !important;
+  border-color: #0B3D91 !important;
+}
+
+.btn-primary:hover {
+  background-color: #084080 !important;
+  border-color: #084080 !important;
+}
+
+/* Accent Red #D64541 - Highlights, CTA buttons */
+.text-danger,
+.btn-danger,
+a.text-danger {
+  color: #D64541 !important;
+}
+
+.btn-danger {
+  background-color: #D64541 !important;
+  border-color: #D64541 !important;
+}
+
+.btn-danger:hover {
+  background-color: #c23835 !important;
+  border-color: #c23835 !important;
+}
+
+/* Sky Blue #4FA3D1 - Hover effects, icons */
+.text-info,
+a:hover {
+  color: #4FA3D1 !important;
+}
+
+/* Neutral Base #F9F9F9 - Backgrounds */
+.bg-light {
+  background-color: #F9F9F9 !important;
+}
+
+/* Dark Text #2B2B2B - Paragraph text */
+body,
+p,
+.mbr-text {
+  color: #2B2B2B !important;
+}
+
+/* Navigation links - Primary Blue */
+.nav-link {
+  color: #0B3D91 !important;
+}
+
+.nav-link:hover {
+  color: #4FA3D1 !important;
+}
+
+/* Buttons with brand colors */
+.btn-white-outline {
+  border-color: #0B3D91 !important;
+  color: #0B3D91 !important;
+}
+
+.btn-white-outline:hover {
+  background-color: #0B3D91 !important;
+  color: white !important;
+}
+
+/* Link colors */
+a {
+  color: #D64541;
+}
+
+a:hover {
+  color: #4FA3D1;
+}
+
+/* Theme color for meta tags */
+[name="theme-color"] {
+  content: #0B3D91;
+}
+
+/* Typography normalization: tame oversized Mobirise display classes */
+.display-1 { font-size: 2.5rem !important; line-height: 1.2; font-weight: 700; }
+.display-2 { font-size: 2rem !important; line-height: 1.3; font-weight: 700; }
+.display-3 { font-size: 1.75rem !important; line-height: 1.35; font-weight: 600; }
+.display-4 { font-size: 1rem !important; line-height: 1.5; font-weight: 500; }
+.display-5 { font-size: 1.25rem !important; line-height: 1.5; font-weight: 600; }
+.display-6 { font-size: 1.1rem !important; line-height: 1.5; font-weight: 500; }
+.display-7 { font-size: 1rem !important; line-height: 1.6; font-weight: 500; }
+
+/* Keep dropdowns compact and professional */
+.dropdown-menu {
+  padding: 8px 0 !important;
+  border-radius: 8px !important;
+}
