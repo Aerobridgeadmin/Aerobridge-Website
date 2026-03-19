@@ -1,0 +1,409 @@
+/**
+ * AeroBridge — Animation Styles
+ * Scroll reveal, parallax, counters, stagger, tilt, floating elements
+ */
+
+/* ============================================================================
+   SCROLL REVEAL
+   ============================================================================ */
+
+.reveal-element {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-element.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children */
+.stagger-element {
+  opacity: 0;
+  transform: translateY(40px) scale(0.97);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.stagger-element.stagger-revealed {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* ============================================================================
+   NAVBAR MORPH
+   ============================================================================ */
+
+.navbar {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.navbar-scrolled {
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
+  box-shadow: 0 4px 30px rgba(11, 61, 145, 0.12) !important;
+}
+
+.navbar-scrolled .navbar-brand img {
+  height: 60px;
+  transition: height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.navbar-brand img {
+  transition: height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ============================================================================
+   HERO ANIMATIONS
+   ============================================================================ */
+
+/* Word-by-word reveal */
+.hero-title-animated {
+  overflow: visible !important;
+}
+
+.hero-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(40px) rotateX(20deg);
+  animation: wordReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes wordReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+  }
+}
+
+/* Floating plane */
+.hero-plane {
+  position: absolute;
+  z-index: 1;
+  top: 20%;
+  right: 8%;
+  animation: floatPlane 20s linear infinite;
+  pointer-events: none;
+}
+
+.hero-plane-2 {
+  top: 55%;
+  right: auto;
+  left: 5%;
+  animation: floatPlane2 28s linear infinite;
+  animation-delay: -8s;
+}
+
+@keyframes floatPlane {
+  0%   { transform: translate(0, 0) rotate(-8deg); opacity: 0; }
+  5%   { opacity: 1; }
+  50%  { transform: translate(-60vw, -15vh) rotate(-12deg); opacity: 1; }
+  95%  { opacity: 1; }
+  100% { transform: translate(-120vw, -30vh) rotate(-8deg); opacity: 0; }
+}
+
+@keyframes floatPlane2 {
+  0%   { transform: translate(0, 0) rotate(5deg); opacity: 0; }
+  5%   { opacity: 1; }
+  50%  { transform: translate(50vw, -20vh) rotate(10deg); opacity: 0.8; }
+  95%  { opacity: 1; }
+  100% { transform: translate(100vw, -35vh) rotate(5deg); opacity: 0; }
+}
+
+/* Subtle particle dots in hero */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image:
+    radial-gradient(1.5px 1.5px at 15% 20%, rgba(255,255,255,0.15) 50%, transparent 50%),
+    radial-gradient(1px 1px at 45% 65%, rgba(255,255,255,0.1) 50%, transparent 50%),
+    radial-gradient(1.5px 1.5px at 75% 35%, rgba(255,255,255,0.12) 50%, transparent 50%),
+    radial-gradient(1px 1px at 85% 80%, rgba(255,255,255,0.08) 50%, transparent 50%),
+    radial-gradient(2px 2px at 25% 85%, rgba(255,255,255,0.06) 50%, transparent 50%),
+    radial-gradient(1px 1px at 60% 15%, rgba(255,255,255,0.1) 50%, transparent 50%);
+  animation: twinkle 6s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes twinkle {
+  0%   { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+/* ============================================================================
+   CARD HOVER EFFECTS
+   ============================================================================ */
+
+.card, .testimonial-card, .pricing-card {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s ease;
+  will-change: transform;
+}
+
+/* Glow effect on hover */
+.card:hover {
+  box-shadow:
+    0 10px 25px -3px rgba(11, 61, 145, 0.1),
+    0 4px 6px -2px rgba(11, 61, 145, 0.05),
+    0 0 0 1px rgba(11, 61, 145, 0.08);
+}
+
+.card-feature:hover {
+  border-left-width: 6px;
+}
+
+.card-feature.accent-red:hover {
+  box-shadow:
+    0 10px 25px -3px rgba(214, 69, 65, 0.12),
+    0 4px 6px -2px rgba(214, 69, 65, 0.06);
+}
+
+.card-feature.accent-sky:hover {
+  box-shadow:
+    0 10px 25px -3px rgba(135, 206, 235, 0.2),
+    0 4px 6px -2px rgba(135, 206, 235, 0.1);
+}
+
+/* Icon pulse on card hover */
+.card:hover .card-icon,
+.card:hover .service-icon {
+  animation: iconPop 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes iconPop {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+/* ============================================================================
+   BUTTON ANIMATIONS
+   ============================================================================ */
+
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn:active::after {
+  width: 300px;
+  height: 300px;
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+  transform: translateY(-3px);
+}
+
+/* ============================================================================
+   TESTIMONIAL STARS SPARKLE
+   ============================================================================ */
+
+.stars-animate {
+  animation: starSparkle 2s ease-in-out 1;
+}
+
+@keyframes starSparkle {
+  0%   { opacity: 0; transform: scale(0.5); }
+  40%  { opacity: 1; transform: scale(1.15); }
+  60%  { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
+
+/* ============================================================================
+   STAT COUNTER GLOW
+   ============================================================================ */
+
+.section-gradient .stat-card {
+  position: relative;
+}
+
+.section-gradient .stat-number {
+  text-shadow: 0 0 40px rgba(255, 255, 255, 0.3);
+  transition: text-shadow 0.3s ease;
+}
+
+.section-gradient .stat-card:hover .stat-number {
+  text-shadow: 0 0 60px rgba(255, 255, 255, 0.5);
+}
+
+/* ============================================================================
+   CTA SECTION GLOW
+   ============================================================================ */
+
+.cta-form {
+  animation: formGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes formGlow {
+  0%   { box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 0 0 0 rgba(255, 255, 255, 0); }
+  100% { box-shadow: 0 25px 50px -5px rgba(0, 0, 0, 0.15), 0 0 80px -10px rgba(255, 255, 255, 0.08); }
+}
+
+/* ============================================================================
+   SECTION DIVIDER WAVES
+   ============================================================================ */
+
+.section-gradient {
+  position: relative;
+}
+
+.section-gradient::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: var(--surface-background);
+  clip-path: ellipse(55% 100% at 50% 0%);
+  z-index: 1;
+}
+
+.section-gradient::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: var(--surface-background);
+  clip-path: ellipse(55% 100% at 50% 100%);
+  z-index: 1;
+}
+
+/* ============================================================================
+   FOOTER LINK HOVER
+   ============================================================================ */
+
+.footer-links a {
+  position: relative;
+}
+
+.footer-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.6);
+  transition: width 0.3s ease;
+}
+
+.footer-links a:hover::after {
+  width: 100%;
+}
+
+/* ============================================================================
+   WHATSAPP BOUNCE ENHANCED
+   ============================================================================ */
+
+.whatsapp-float {
+  animation: whatsappBounce 3s ease-in-out infinite;
+}
+
+@keyframes whatsappBounce {
+  0%, 100% { transform: translateY(0); box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); }
+  25%      { transform: translateY(-6px); box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5); }
+  50%      { transform: translateY(0); box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); }
+  75%      { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45); }
+}
+
+/* ============================================================================
+   REDUCED MOTION
+   ============================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal-element { opacity: 1; transform: none; }
+  .stagger-element { opacity: 1; transform: none; }
+  .hero-plane, .hero-plane-2 { display: none; }
+}
+
+/* ============================================================================
+   HERO SCROLL INDICATOR
+   ============================================================================ */
+
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  animation: fadeInUp 1s ease 1.2s both;
+}
+
+.hero-scroll-indicator span {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.scroll-mouse {
+  width: 24px;
+  height: 38px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-radius: 12px;
+  position: relative;
+}
+
+.scroll-wheel {
+  width: 3px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 2px;
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: scrollBounce 2s ease-in-out infinite;
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); opacity: 1; }
+  50%      { transform: translateX(-50%) translateY(12px); opacity: 0.3; }
+}
+
+/* ============================================================================
+   PAGE LOAD TRANSITION
+   ============================================================================ */
+
+body {
+  animation: pageLoad 0.6s ease both;
+}
+
+@keyframes pageLoad {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
