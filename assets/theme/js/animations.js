@@ -77,15 +77,20 @@ document.addEventListener('DOMContentLoaded', () => {
   // ── NAVBAR MORPH ON SCROLL ──
   const navbar = document.querySelector('.navbar');
   if (navbar) {
-    let lastScroll = 0;
+    let isScrolled = false;
+    let ticking = false;
     window.addEventListener('scroll', () => {
-      const scrollY = window.scrollY;
-      if (scrollY > 60) {
-        navbar.classList.add('navbar-scrolled');
-      } else {
-        navbar.classList.remove('navbar-scrolled');
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const shouldBeScrolled = window.scrollY > 80;
+          if (shouldBeScrolled !== isScrolled) {
+            isScrolled = shouldBeScrolled;
+            navbar.classList.toggle('navbar-scrolled', isScrolled);
+          }
+          ticking = false;
+        });
+        ticking = true;
       }
-      lastScroll = scrollY;
     }, { passive: true });
   }
 

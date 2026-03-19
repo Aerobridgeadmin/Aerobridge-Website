@@ -37,16 +37,15 @@
    ============================================================================ */
 
 .navbar {
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: box-shadow 0.4s ease, background 0.4s ease;
   background: rgba(255, 255, 255, 0.97);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
 
 .navbar-scrolled {
-  padding-top: 4px !important;
-  padding-bottom: 4px !important;
   box-shadow: 0 4px 30px rgba(11, 61, 145, 0.12) !important;
+  background: rgba(255, 255, 255, 0.99);
 }
 
 .navbar-scrolled .navbar-brand img {
