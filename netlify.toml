@@ -1,6 +1,7 @@
 [build]
   publish = "."
 
+# Clean URLs for all pages
 [[redirects]]
   from = "/sobrenosotros"
   to = "/sobrenosotros.html"
@@ -30,3 +31,27 @@
   from = "/listadepreciosyservicios"
   to = "/listadepreciosyservicios.html"
   status = 200
+
+[[redirects]]
+  from = "/como-empezar"
+  to = "/CómoEmpezar.html"
+  status = 200
+
+[[redirects]]
+  from = "/preparacion-examenes"
+  to = "/Preparacióndeexámenes.html"
+  status = 200
+
+# Form success page redirect
+[[redirects]]
+  from = "/success"
+  to = "/contact.html"
+  status = 200
+
+# Force HTTPS
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

@@ -39,7 +39,7 @@
 <body>
 
 <!-- WhatsApp Floating Button -->
-<a href="https://wa.me/56912345678?text=Hola!%20Me%20gustaría%20obtener%20más%20información%20sobre%20Aerobridge%20Consulting" 
+<a href="https://wa.me/56973980874?text=Hola!%20Me%20gustaría%20obtener%20más%20información%20sobre%20Aerobridge%20Consulting" 
    class="whatsapp-float" 
    target="_blank" 
    rel="noopener noreferrer"
@@ -79,12 +79,12 @@
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Servicios</a>
           <ul class="dropdown-menu">
             <li><a class='dropdown-item' href='/servicios'>Nuestros Servicios</a></li>
-            <li><a class="dropdown-item" href="Preparacióndeexámenes.html">Preparación de Exámenes</a></li>
+            <li><a class="dropdown-item" href="/preparacion-examenes">Preparación de Exámenes</a></li>
             <li><a class='dropdown-item' href='/listadepreciosyservicios'>Precios</a></li>
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="CómoEmpezar.html">Cómo Empezar</a>
+          <a class="nav-link" href="/como-empezar">Cómo Empezar</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Soporte</a>
@@ -130,12 +130,6 @@
         </div>
       </div>
     </div>
-  </div>
-  
-  <!-- Scroll indicator -->
-  <div class="hero-scroll-indicator">
-    <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
-    <span>Desplazar</span>
   </div>
 </section>
 
@@ -193,66 +187,128 @@
   </div>
 </section>
 
-<!-- Full-Width Marketing Video Section -->
-<section class="video-showcase">
-  <div class="video-container">
-    <video id="marketing-video" muted loop playsinline preload="metadata">
-      <source src="assets/images/aerobridge-video.mp4" type="video/mp4">
-      Tu navegador no soporta video HTML5.
-    </video>
+<!-- Feature Showcase (replaces video) -->
+<section class="showcase-section">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <div class="showcase-visual">
+          <div class="showcase-ring showcase-ring-1"></div>
+          <div class="showcase-ring showcase-ring-2"></div>
+          <div class="showcase-ring showcase-ring-3"></div>
+          <div class="showcase-center">
+            <img src="assets/images/aerobridge-logo-1.jpg" alt="AeroBridge" class="showcase-logo">
+          </div>
+          <div class="showcase-orbit-dot showcase-dot-1"></div>
+          <div class="showcase-orbit-dot showcase-dot-2"></div>
+          <div class="showcase-orbit-dot showcase-dot-3"></div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <h2 style="color: white; font-size: 2.2rem;">Tu futuro en aviación<br><span style="color: var(--accent-sky);">comienza aquí</span></h2>
+        <p style="color: rgba(255,255,255,0.85); font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;">
+          AeroBridge Consulting conecta a estudiantes chilenos con las mejores oportunidades de formación aeronáutica internacional. Desde certificaciones FAA hasta escuelas de vuelo en el extranjero.
+        </p>
+        <div class="showcase-features">
+          <div class="showcase-feat">
+            <div class="showcase-feat-icon">✈</div>
+            <div>
+              <h5 style="color: white; margin-bottom: 4px; font-size: 1rem;">Certificación FAA & ICAO</h5>
+              <p style="color: rgba(255,255,255,0.65); font-size: 0.9rem; margin: 0;">Preparación completa para exámenes internacionales</p>
+            </div>
+          </div>
+          <div class="showcase-feat">
+            <div class="showcase-feat-icon">🌎</div>
+            <div>
+              <h5 style="color: white; margin-bottom: 4px; font-size: 1rem;">Escuelas Internacionales</h5>
+              <p style="color: rgba(255,255,255,0.65); font-size: 0.9rem; margin: 0;">Conexiones con academias en USA, Canadá y Europa</p>
+            </div>
+          </div>
+          <div class="showcase-feat">
+            <div class="showcase-feat-icon">📘</div>
+            <div>
+              <h5 style="color: white; margin-bottom: 4px; font-size: 1rem;">Inglés Aeronáutico</h5>
+              <p style="color: rgba(255,255,255,0.65); font-size: 0.9rem; margin: 0;">Comunicación técnica profesional para pilotos</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <style>
-  .video-showcase {
+  .showcase-section {
+    background: linear-gradient(160deg, #061d42 0%, #0B3D91 50%, #1a5ab8 100%);
+    padding: 80px 0;
     position: relative;
-    width: 100%;
-    background: var(--brand-deep-navy);
     overflow: hidden;
   }
-  
-  .video-container {
+  .showcase-visual {
     position: relative;
     width: 100%;
-    max-height: 80vh;
-    overflow: hidden;
+    aspect-ratio: 1;
+    max-width: 420px;
+    margin: 0 auto;
   }
-  
-  .video-container video {
-    width: 100%;
+  .showcase-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1.5px solid rgba(135,206,235,0.15);
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+  }
+  .showcase-ring-1 { width: 70%; height: 70%; animation: ringPulse 4s ease-in-out infinite; }
+  .showcase-ring-2 { width: 85%; height: 85%; animation: ringPulse 4s ease-in-out infinite 1s; border-color: rgba(135,206,235,0.1); }
+  .showcase-ring-3 { width: 100%; height: 100%; animation: ringPulse 4s ease-in-out infinite 2s; border-color: rgba(135,206,235,0.06); }
+  @keyframes ringPulse { 0%,100% { transform: translate(-50%,-50%) scale(1); opacity:1; } 50% { transform: translate(-50%,-50%) scale(1.05); opacity:0.6; } }
+  .showcase-center {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    width: 50%; height: 50%;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .showcase-logo {
+    width: 65%;
     height: auto;
-    display: block;
+    border-radius: 50%;
     object-fit: cover;
-    min-height: 400px;
-    max-height: 80vh;
   }
-  
-  @media (max-width: 768px) {
-    .video-container video {
-      min-height: 300px;
-    }
+  .showcase-orbit-dot {
+    position: absolute;
+    width: 10px; height: 10px;
+    background: var(--accent-sky);
+    border-radius: 50%;
+    box-shadow: 0 0 16px rgba(135,206,235,0.6);
+  }
+  .showcase-dot-1 { top: 10%; left: 50%; animation: orbitDot 8s linear infinite; }
+  .showcase-dot-2 { top: 50%; right: 5%; animation: orbitDot 8s linear infinite 2.6s; }
+  .showcase-dot-3 { bottom: 15%; left: 20%; animation: orbitDot 8s linear infinite 5.2s; }
+  @keyframes orbitDot { 0%,100% { opacity:0.3; transform:scale(0.6); } 50% { opacity:1; transform:scale(1.2); } }
+  .showcase-features { display: flex; flex-direction: column; gap: 20px; }
+  .showcase-feat {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px 20px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.08);
+    transition: all 0.3s ease;
+  }
+  .showcase-feat:hover { background: rgba(255,255,255,0.1); transform: translateX(6px); }
+  .showcase-feat-icon { font-size: 1.6rem; line-height: 1; flex-shrink: 0; margin-top: 2px; }
+  @media (max-width: 991px) {
+    .showcase-visual { max-width: 280px; margin-bottom: 40px; }
   }
 </style>
-
-<script>
-  // Video scroll-triggered playback
-  document.addEventListener('DOMContentLoaded', function() {
-    const video = document.getElementById('marketing-video');
-    
-    // Intersection Observer for scroll-triggered play
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
-          video.play().catch(() => {});
-        } else {
-          video.pause();
-        }
-      });
-    }, { threshold: [0, 0.5, 1] });
-    
-    observer.observe(video);
-  });
-</script>
 
 <!-- Services Preview -->
 <section class="section section-white">
@@ -364,68 +420,50 @@
   </div>
 </section>
 
-<!-- Testimonials Section -->
+<!-- Why AeroBridge Section -->
 <section class="section section-light">
   <div class="container">
     <div class="section-title">
-      <h2>Historias de Éxito</h2>
-      <p>Conoce a los estudiantes que han cumplido sus sueños de convertirse en pilotos profesionales</p>
+      <h2>¿Por qué elegir <span style="color: var(--brand-secondary);">AeroBridge</span>?</h2>
+      <p>Lo que nos diferencia en la preparación aeronáutica internacional</p>
     </div>
     
     <div class="row g-4">
       <div class="col-md-6 col-lg-4">
-        <div class="testimonial-card">
-          <div class="d-flex align-items-center mb-3 gap-3">
-            <div class="testimonial-avatar">CM</div>
-            <div>
-              <h5 class="mb-0" style="color: var(--brand-primary); font-weight: 600;">Carlos Morales</h5>
-              <small style="color: var(--accent-sky);">Piloto Comercial, FAA</small>
-            </div>
+        <div class="card h-100">
+          <div class="card-body text-center">
+            <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 16 16"><path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/><path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/></svg></div>
+            <h4 class="card-title">Experiencia Comprobada</h4>
+            <p class="card-text">Equipo con experiencia directa en procesos de certificación FAA, ICAO y validaciones internacionales de licencias de vuelo.</p>
           </div>
-          <div class="testimonial-rating mb-3">★★★★★</div>
-          <p class="testimonial-text">
-            "Aerobridge me ayudó a prepararme para mi examen FAA. Gracias a su orientación, aprobé en el primer intento y ahora vuelo internacionalmente. ¡Recomendado 100%!"
-          </p>
         </div>
       </div>
       
       <div class="col-md-6 col-lg-4">
-        <div class="testimonial-card">
-          <div class="d-flex align-items-center mb-3 gap-3">
-            <div class="testimonial-avatar">MF</div>
-            <div>
-              <h5 class="mb-0" style="color: var(--brand-primary); font-weight: 600;">María Fernández</h5>
-              <small style="color: var(--accent-sky);">Estudiante de Aviación, USA</small>
-            </div>
+        <div class="card h-100">
+          <div class="card-body text-center">
+            <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0ZM2.04 4.326c.325 1.329 2.532 2.54 3.717 3.19.48.263.793.434.743.484-.08.08-.162.158-.242.234-.416.396-.787.749-.758 1.266.035.634.618.824 1.214 1.017.577.188 1.168.38 1.286.983.082.417-.075.988-.22 1.52-.215.782-.406 1.48.22 1.48 1.5-.5 3.798-3.186 4-5 .138-1.243-2-2-3.5-2.5-.478-.16-.755.081-.99.284-.172.15-.322.279-.51.216-.445-.148-2.5-2-1.5-2.5.78-.39.952-.171 1.227.182.078.099.163.208.273.318.609.304.662-.132.723-.633.039-.322.081-.671.277-.867.434-.434 1.265-.791 2.028-1.12.712-.306 1.365-.587 1.579-.88A7 7 0 1 1 2.04 4.327Z"/></svg></div>
+            <h4 class="card-title">Red Internacional</h4>
+            <p class="card-text">Contactos directos con escuelas de vuelo en Estados Unidos, Canadá, Europa y otras regiones para facilitar tu ingreso.</p>
           </div>
-          <div class="testimonial-rating mb-3">★★★★★</div>
-          <p class="testimonial-text">
-            "El equipo de Aerobridge me guió en cada paso del proceso para estudiar en Estados Unidos. Su experiencia y apoyo fueron fundamentales para lograr mi sueño."
-          </p>
         </div>
       </div>
       
       <div class="col-md-6 col-lg-4">
-        <div class="testimonial-card">
-          <div class="d-flex align-items-center mb-3 gap-3">
-            <div class="testimonial-avatar">RS</div>
-            <div>
-              <h5 class="mb-0" style="color: var(--brand-primary); font-weight: 600;">Roberto Silva</h5>
-              <small style="color: var(--accent-sky);">Certificación ICAO</small>
-            </div>
+        <div class="card h-100">
+          <div class="card-body text-center">
+            <div class="service-icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 16 16"><path d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"/><path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/></svg></div>
+            <h4 class="card-title">Acompañamiento Completo</h4>
+            <p class="card-text">Te guiamos desde la planificación inicial hasta que obtienes tu certificación. No estás solo en el proceso.</p>
           </div>
-          <div class="testimonial-rating mb-3">★★★★★</div>
-          <p class="testimonial-text">
-            "Profesionales de primer nivel. Me prepararon perfectamente para mi certificación ICAO. Su conocimiento del proceso internacional es invaluable."
-          </p>
         </div>
       </div>
     </div>
     
     <div class="text-center mt-5">
-      <span class="badge badge-primary" style="padding: 15px 30px; font-size: 1rem;">
-        Más de 50+ estudiantes preparados exitosamente
-      </span>
+      <a class="btn btn-secondary btn-lg btn-pill" href="https://wa.me/56973980874?text=Hola!%20Quiero%20agendar%20una%20consulta%20gratuita" target="_blank">
+        Agenda tu Consulta Gratuita →
+      </a>
     </div>
   </div>
 </section>
@@ -446,7 +484,7 @@
           <div class="row justify-content-center">
             <div class="col-lg-8">
               <div class="cta-form">
-                <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <form action="/success" method="POST" data-netlify="true" name="consulta">
                   <div class="row g-3">
                     <div class="col-md-6">
                       <input type="text" name="nombre" placeholder="Nombre Completo" required class="form-control">
@@ -487,9 +525,9 @@
           <div class="text-center mt-5">
             <p style="color: white; margin-bottom: var(--spacing-md);">O contáctanos directamente:</p>
             <div class="d-flex flex-wrap justify-content-center gap-3">
-              <a href="https://wa.me/56912345678" class="btn btn-outline-light btn-pill">WhatsApp</a>
+              <a href="https://wa.me/56973980874" class="btn btn-outline-light btn-pill">WhatsApp</a>
               <a href="mailto:info@aerobridge.cl" class="btn btn-outline-light btn-pill">Email</a>
-              <a href="tel:+56912345678" class="btn btn-outline-light btn-pill">Llamar</a>
+              <a href="tel:+56973980874" class="btn btn-outline-light btn-pill">Llamar</a>
             </div>
           </div>
         </div>
@@ -514,7 +552,7 @@
         <h5>Servicios</h5>
         <ul class="footer-links">
           <li><a href='/servicios'>→ Nuestros Servicios</a></li>
-          <li><a href="Preparacióndeexámenes.html">→ Preparación de Exámenes</a></li>
+          <li><a href="/preparacion-examenes">→ Preparación de Exámenes</a></li>
           <li><a href='/listadepreciosyservicios'>→ Precios</a></li>
         </ul>
       </div>
@@ -522,7 +560,7 @@
       <div class="col-6 col-md-3 mb-4">
         <h5>Soporte</h5>
         <ul class="footer-links">
-          <li><a href="CómoEmpezar.html">→ Cómo Empezar</a></li>
+          <li><a href="/como-empezar">→ Cómo Empezar</a></li>
           <li><a href='/faq'>→ Preguntas Frecuentes</a></li>
           <li><a href='/contact'>→ Contacto</a></li>
         </ul>
@@ -531,9 +569,9 @@
       <div class="col-6 col-md-3 mb-4">
         <h5>Conéctate</h5>
         <ul class="footer-links">
-          <li><a href="https://wa.me/56912345678">→ WhatsApp</a></li>
+          <li><a href="https://wa.me/56973980874">→ WhatsApp</a></li>
           <li><a href="mailto:info@aerobridge.cl">→ Email</a></li>
-          <li><a href="tel:+56912345678">→ Teléfono</a></li>
+          <li><a href="tel:+56973980874">→ Teléfono</a></li>
         </ul>
       </div>
     </div>
