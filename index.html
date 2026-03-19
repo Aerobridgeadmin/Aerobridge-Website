@@ -187,50 +187,94 @@
   </div>
 </section>
 
-<!-- Feature Showcase (replaces video) -->
-<section class="showcase-section">
+<!-- AeroBridge Logo Showcase -->
+<section class="logo-showcase" id="logo-showcase">
+  <div class="ls-bg">
+    <div class="ls-grid"></div>
+    <div class="ls-glow ls-glow-1"></div>
+    <div class="ls-glow ls-glow-2"></div>
+  </div>
   <div class="container">
     <div class="row align-items-center g-5">
-      <div class="col-lg-6">
-        <div class="showcase-visual">
-          <div class="showcase-ring showcase-ring-1"></div>
-          <div class="showcase-ring showcase-ring-2"></div>
-          <div class="showcase-ring showcase-ring-3"></div>
-          <div class="showcase-center">
-            <img src="assets/images/aerobridge-logo-1.jpg" alt="AeroBridge" class="showcase-logo">
+      <div class="col-lg-6 order-lg-2">
+        <div class="ls-orbit-wrapper">
+          <!-- Orbit rings -->
+          <svg class="ls-orbits" viewBox="0 0 500 500">
+            <!-- Radar grid circles -->
+            <circle cx="250" cy="250" r="230" fill="none" stroke="rgba(135,206,235,0.04)" stroke-width="1"/>
+            <circle cx="250" cy="250" r="180" fill="none" stroke="rgba(135,206,235,0.06)" stroke-width="1"/>
+            <circle cx="250" cy="250" r="130" fill="none" stroke="rgba(135,206,235,0.08)" stroke-width="1"/>
+            <!-- Flight path 1 — dashed orbit -->
+            <circle cx="250" cy="250" r="210" fill="none" stroke="rgba(135,206,235,0.18)" stroke-width="1.5" stroke-dasharray="8 12" class="ls-path ls-path-1"/>
+            <!-- Flight path 2 — elliptical -->
+            <ellipse cx="250" cy="250" rx="170" ry="220" fill="none" stroke="rgba(135,206,235,0.12)" stroke-width="1" stroke-dasharray="6 10" class="ls-path ls-path-2" transform="rotate(25, 250, 250)"/>
+            <!-- Flight path 3 -->
+            <ellipse cx="250" cy="250" rx="230" ry="160" fill="none" stroke="rgba(135,206,235,0.09)" stroke-width="1" stroke-dasharray="4 14" class="ls-path ls-path-3" transform="rotate(-15, 250, 250)"/>
+            <!-- Crosshair lines -->
+            <line x1="250" y1="30" x2="250" y2="100" stroke="rgba(135,206,235,0.08)" stroke-width="0.5"/>
+            <line x1="250" y1="400" x2="250" y2="470" stroke="rgba(135,206,235,0.08)" stroke-width="0.5"/>
+            <line x1="30" y1="250" x2="100" y2="250" stroke="rgba(135,206,235,0.08)" stroke-width="0.5"/>
+            <line x1="400" y1="250" x2="470" y2="250" stroke="rgba(135,206,235,0.08)" stroke-width="0.5"/>
+            <!-- Traveling light dots -->
+            <circle r="4" fill="#87CEEB" class="ls-dot ls-dot-1" filter="url(#glow)">
+              <animateMotion dur="12s" repeatCount="indefinite" path="M460,250 A210,210 0 1,1 460,249.9"/>
+            </circle>
+            <circle r="3" fill="#87CEEB" class="ls-dot ls-dot-2" filter="url(#glow)">
+              <animateMotion dur="18s" repeatCount="indefinite" path="M250,30 A220,170 25 1,1 250,29.9"/>
+            </circle>
+            <circle r="2.5" fill="rgba(214,69,65,0.8)" class="ls-dot ls-dot-3" filter="url(#glowRed)">
+              <animateMotion dur="15s" repeatCount="indefinite" path="M480,250 A230,160 -15 1,1 480,249.9"/>
+            </circle>
+            <!-- Glow filters -->
+            <defs>
+              <filter id="glow"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+              <filter id="glowRed"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            </defs>
+          </svg>
+          <!-- Center logo -->
+          <div class="ls-logo-frame">
+            <div class="ls-logo-ring"></div>
+            <img src="assets/images/aerobridge-logo-dark-bg.png" alt="AeroBridge" class="ls-logo-img">
           </div>
-          <div class="showcase-orbit-dot showcase-dot-1"></div>
-          <div class="showcase-orbit-dot showcase-dot-2"></div>
-          <div class="showcase-orbit-dot showcase-dot-3"></div>
+          <!-- Waypoint labels -->
+          <div class="ls-waypoint ls-wp-1">FAA</div>
+          <div class="ls-waypoint ls-wp-2">ICAO</div>
+          <div class="ls-waypoint ls-wp-3">USA</div>
+          <div class="ls-waypoint ls-wp-4">EUR</div>
         </div>
       </div>
-      <div class="col-lg-6">
-        <h2 style="color: white; font-size: 2.2rem;">Tu futuro en aviación<br><span style="color: var(--accent-sky);">comienza aquí</span></h2>
-        <p style="color: rgba(255,255,255,0.85); font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;">
+      <div class="col-lg-6 order-lg-1">
+        <h2 class="ls-heading">Tu futuro en aviación<br><span>comienza aquí</span></h2>
+        <p class="ls-subtext">
           AeroBridge Consulting conecta a estudiantes chilenos con las mejores oportunidades de formación aeronáutica internacional. Desde certificaciones FAA hasta escuelas de vuelo en el extranjero.
         </p>
-        <div class="showcase-features">
-          <div class="showcase-feat">
-            <div class="showcase-feat-icon">✈</div>
+        <div class="ls-features">
+          <div class="ls-feat">
+            <svg class="ls-feat-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M6.428 1.151C6.708.591 7.213 0 8 0s1.292.592 1.572 1.151C9.861 1.73 10 2.431 10 3v3.691l5.17 2.585a1.5 1.5 0 0 1 .83 1.342V12a.5.5 0 0 1-.582.493l-5.507-.918-.375 2.253 1.318 1.318A.5.5 0 0 1 10.5 16h-5a.5.5 0 0 1-.354-.854l1.319-1.318-.376-2.253-5.507.918A.5.5 0 0 1 0 12v-1.382a1.5 1.5 0 0 1 .83-1.342L6 6.691V3c0-.568.14-1.271.428-1.849Z"/></svg>
             <div>
-              <h5 style="color: white; margin-bottom: 4px; font-size: 1rem;">Certificación FAA & ICAO</h5>
-              <p style="color: rgba(255,255,255,0.65); font-size: 0.9rem; margin: 0;">Preparación completa para exámenes internacionales</p>
+              <strong>Certificación FAA & ICAO</strong>
+              <p>Preparación completa para exámenes internacionales</p>
             </div>
           </div>
-          <div class="showcase-feat">
-            <div class="showcase-feat-icon">🌎</div>
+          <div class="ls-feat">
+            <svg class="ls-feat-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855A7.97 7.97 0 0 0 5.145 4H7.5V1.077zM4.09 4a9.267 9.267 0 0 1 .64-1.539 6.7 6.7 0 0 1 .597-.933A7.025 7.025 0 0 0 2.255 4H4.09zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a6.958 6.958 0 0 0-.656 2.5h2.49zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5H4.847zM8.5 5v2.5h2.99a12.495 12.495 0 0 0-.337-2.5H8.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5H4.51zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5H8.5z"/></svg>
             <div>
-              <h5 style="color: white; margin-bottom: 4px; font-size: 1rem;">Escuelas Internacionales</h5>
-              <p style="color: rgba(255,255,255,0.65); font-size: 0.9rem; margin: 0;">Conexiones con academias en USA, Canadá y Europa</p>
+              <strong>Escuelas Internacionales</strong>
+              <p>Conexiones con academias en USA, Canadá y Europa</p>
             </div>
           </div>
-          <div class="showcase-feat">
-            <div class="showcase-feat-icon">📘</div>
+          <div class="ls-feat">
+            <svg class="ls-feat-icon" viewBox="0 0 16 16" fill="currentColor"><path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/></svg>
             <div>
-              <h5 style="color: white; margin-bottom: 4px; font-size: 1rem;">Inglés Aeronáutico</h5>
-              <p style="color: rgba(255,255,255,0.65); font-size: 0.9rem; margin: 0;">Comunicación técnica profesional para pilotos</p>
+              <strong>Inglés Aeronáutico</strong>
+              <p>Comunicación técnica profesional para pilotos</p>
             </div>
           </div>
+        </div>
+        <div class="ls-cta">
+          <a class="btn btn-secondary btn-lg btn-pill" href="https://wa.me/56973980874?text=Hola!%20Quiero%20saber%20más%20sobre%20AeroBridge" target="_blank">
+            Conversemos →
+          </a>
         </div>
       </div>
     </div>
@@ -238,75 +282,189 @@
 </section>
 
 <style>
-  .showcase-section {
-    background: linear-gradient(160deg, #061d42 0%, #0B3D91 50%, #1a5ab8 100%);
-    padding: 80px 0;
+  /* ─── Logo Showcase ─── */
+  .logo-showcase {
+    background: #040e1f;
+    padding: 100px 0;
     position: relative;
     overflow: hidden;
   }
-  .showcase-visual {
+  .ls-bg {
+    position: absolute; inset: 0; pointer-events: none;
+  }
+  .ls-grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(135,206,235,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(135,206,235,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 70% 60% at 65% 50%, black 20%, transparent 70%);
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 65% 50%, black 20%, transparent 70%);
+  }
+  .ls-glow {
+    position: absolute; border-radius: 50%;
+    filter: blur(100px);
+  }
+  .ls-glow-1 {
+    width: 500px; height: 500px;
+    background: rgba(11,61,145,0.25);
+    top: 10%; right: 5%;
+    animation: glowDrift 8s ease-in-out infinite alternate;
+  }
+  .ls-glow-2 {
+    width: 300px; height: 300px;
+    background: rgba(135,206,235,0.1);
+    bottom: 10%; left: 20%;
+    animation: glowDrift 10s ease-in-out infinite alternate-reverse;
+  }
+  @keyframes glowDrift {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(20px, -15px); }
+  }
+
+  /* Orbit wrapper */
+  .ls-orbit-wrapper {
     position: relative;
     width: 100%;
+    max-width: 480px;
     aspect-ratio: 1;
-    max-width: 420px;
     margin: 0 auto;
   }
-  .showcase-ring {
-    position: absolute;
-    border-radius: 50%;
-    border: 1.5px solid rgba(135,206,235,0.15);
-    top: 50%; left: 50%;
-    transform: translate(-50%,-50%);
+  .ls-orbits {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
   }
-  .showcase-ring-1 { width: 70%; height: 70%; animation: ringPulse 4s ease-in-out infinite; }
-  .showcase-ring-2 { width: 85%; height: 85%; animation: ringPulse 4s ease-in-out infinite 1s; border-color: rgba(135,206,235,0.1); }
-  .showcase-ring-3 { width: 100%; height: 100%; animation: ringPulse 4s ease-in-out infinite 2s; border-color: rgba(135,206,235,0.06); }
-  @keyframes ringPulse { 0%,100% { transform: translate(-50%,-50%) scale(1); opacity:1; } 50% { transform: translate(-50%,-50%) scale(1.05); opacity:0.6; } }
-  .showcase-center {
+
+  /* Rotating flight paths */
+  .ls-path-1 { animation: orbitSpin 60s linear infinite; transform-origin: 250px 250px; }
+  .ls-path-2 { animation: orbitSpin 80s linear infinite reverse; transform-origin: 250px 250px; }
+  .ls-path-3 { animation: orbitSpin 90s linear infinite; transform-origin: 250px 250px; }
+  @keyframes orbitSpin { to { transform: rotate(360deg); } }
+
+  /* Dot glow pulse */
+  .ls-dot-1 { opacity: 0.9; }
+  .ls-dot-2 { opacity: 0.7; }
+  .ls-dot-3 { opacity: 0.8; }
+
+  /* Center logo */
+  .ls-logo-frame {
     position: absolute;
     top: 50%; left: 50%;
-    transform: translate(-50%,-50%);
-    width: 50%; height: 50%;
-    background: rgba(255,255,255,0.08);
-    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    width: 42%; aspect-ratio: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255,255,255,0.1);
   }
-  .showcase-logo {
-    width: 65%;
-    height: auto;
+  .ls-logo-ring {
+    position: absolute; inset: -8px;
     border-radius: 50%;
-    object-fit: cover;
+    border: 2px solid rgba(135,206,235,0.2);
+    animation: logoRingPulse 3s ease-in-out infinite;
   }
-  .showcase-orbit-dot {
+  .ls-logo-ring::after {
+    content: '';
+    position: absolute; inset: -6px;
+    border-radius: 50%;
+    border: 1px solid rgba(135,206,235,0.08);
+  }
+  @keyframes logoRingPulse {
+    0%, 100% { transform: scale(1); border-color: rgba(135,206,235,0.2); }
+    50% { transform: scale(1.06); border-color: rgba(135,206,235,0.35); }
+  }
+  .ls-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+    filter: drop-shadow(0 0 30px rgba(135,206,235,0.15));
+  }
+
+  /* Waypoint labels */
+  .ls-waypoint {
     position: absolute;
-    width: 10px; height: 10px;
-    background: var(--accent-sky);
-    border-radius: 50%;
-    box-shadow: 0 0 16px rgba(135,206,235,0.6);
+    font-family: 'Montserrat', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: rgba(135,206,235,0.5);
+    border: 1px solid rgba(135,206,235,0.15);
+    padding: 3px 10px;
+    border-radius: 4px;
+    background: rgba(4,14,31,0.7);
+    animation: wpBlink 4s ease-in-out infinite;
   }
-  .showcase-dot-1 { top: 10%; left: 50%; animation: orbitDot 8s linear infinite; }
-  .showcase-dot-2 { top: 50%; right: 5%; animation: orbitDot 8s linear infinite 2.6s; }
-  .showcase-dot-3 { bottom: 15%; left: 20%; animation: orbitDot 8s linear infinite 5.2s; }
-  @keyframes orbitDot { 0%,100% { opacity:0.3; transform:scale(0.6); } 50% { opacity:1; transform:scale(1.2); } }
-  .showcase-features { display: flex; flex-direction: column; gap: 20px; }
-  .showcase-feat {
+  .ls-wp-1 { top: 8%; left: 55%; animation-delay: 0s; }
+  .ls-wp-2 { bottom: 12%; right: 8%; animation-delay: 1s; }
+  .ls-wp-3 { top: 40%; left: 2%; animation-delay: 2s; }
+  .ls-wp-4 { bottom: 25%; left: 15%; animation-delay: 3s; }
+  @keyframes wpBlink {
+    0%, 100% { opacity: 0.4; } 50% { opacity: 0.9; }
+  }
+
+  /* Text side */
+  .ls-heading {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: white;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+  .ls-heading span {
+    color: #87CEEB;
+  }
+  .ls-subtext {
+    color: rgba(255,255,255,0.7);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+  .ls-features {
     display: flex;
-    align-items: flex-start;
+    flex-direction: column;
     gap: 16px;
-    padding: 16px 20px;
-    background: rgba(255,255,255,0.06);
-    border-radius: 12px;
-    border: 1px solid rgba(255,255,255,0.08);
-    transition: all 0.3s ease;
+    margin-bottom: 2rem;
   }
-  .showcase-feat:hover { background: rgba(255,255,255,0.1); transform: translateX(6px); }
-  .showcase-feat-icon { font-size: 1.6rem; line-height: 1; flex-shrink: 0; margin-top: 2px; }
+  .ls-feat {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 18px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(135,206,235,0.08);
+    border-radius: 10px;
+    transition: all 0.35s cubic-bezier(0.16,1,0.3,1);
+  }
+  .ls-feat:hover {
+    background: rgba(135,206,235,0.08);
+    border-color: rgba(135,206,235,0.2);
+    transform: translateX(6px);
+  }
+  .ls-feat-icon {
+    width: 28px; height: 28px;
+    flex-shrink: 0;
+    color: #87CEEB;
+  }
+  .ls-feat strong {
+    color: white;
+    font-size: 0.95rem;
+    display: block;
+    margin-bottom: 2px;
+  }
+  .ls-feat p {
+    color: rgba(255,255,255,0.5);
+    font-size: 0.85rem;
+    margin: 0;
+  }
+  .ls-cta {
+    margin-top: 0.5rem;
+  }
+
   @media (max-width: 991px) {
-    .showcase-visual { max-width: 280px; margin-bottom: 40px; }
+    .logo-showcase { padding: 60px 0; }
+    .ls-orbit-wrapper { max-width: 320px; margin-bottom: 40px; }
+    .ls-heading { font-size: 1.8rem; }
+    .ls-waypoint { display: none; }
   }
 </style>
 
@@ -388,37 +546,6 @@
   </div>
 </section>
 
-<!-- Stats Section -->
-<section class="section section-gradient">
-  <div class="container">
-    <div class="row text-center">
-      <div class="col-6 col-md-3">
-        <div class="stat-card">
-          <div class="stat-number" style="color: white;">50+</div>
-          <div class="stat-label" style="color: rgba(255,255,255,0.8);">Estudiantes Preparados</div>
-        </div>
-      </div>
-      <div class="col-6 col-md-3">
-        <div class="stat-card">
-          <div class="stat-number" style="color: white;">95%</div>
-          <div class="stat-label" style="color: rgba(255,255,255,0.8);">Tasa de Aprobación</div>
-        </div>
-      </div>
-      <div class="col-6 col-md-3">
-        <div class="stat-card">
-          <div class="stat-number" style="color: white;">10+</div>
-          <div class="stat-label" style="color: rgba(255,255,255,0.8);">Países de Destino</div>
-        </div>
-      </div>
-      <div class="col-6 col-md-3">
-        <div class="stat-card">
-          <div class="stat-number" style="color: white;">5★</div>
-          <div class="stat-label" style="color: rgba(255,255,255,0.8);">Calificación Promedio</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- Why AeroBridge Section -->
 <section class="section section-light">
