@@ -383,7 +383,7 @@ a:hover {
 }
 
 .btn:hover {
-  transform: translateY(-2px);
+  
 }
 
 .btn-primary {
@@ -451,12 +451,11 @@ a:hover {
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-card);
   overflow: hidden;
-  transition: all var(--transition-normal);
+  transition: box-shadow var(--transition-normal), border-color var(--transition-normal);
 }
 
 .card:hover {
   box-shadow: var(--shadow-card-hover);
-  transform: translateY(-4px);
   border-color: var(--gray-300);
 }
 
@@ -911,7 +910,7 @@ textarea.form-control {
 }
 
 .pricing-card:hover {
-  transform: translateY(-8px);
+  
   box-shadow: var(--shadow-xl);
 }
 

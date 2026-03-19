@@ -9,27 +9,31 @@
 
 .reveal-element {
   opacity: 0;
-  transform: translateY(32px);
-  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(16px);
+  transition: opacity 0.8s ease-out,
+              transform 0.8s ease-out;
+  will-change: opacity, transform;
 }
 
 .reveal-element.revealed {
   opacity: 1;
   transform: translateY(0);
+  will-change: auto;
 }
 
 /* Stagger children */
 .stagger-element {
   opacity: 0;
-  transform: translateY(40px) scale(0.97);
-  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(20px);
+  transition: opacity 0.7s ease-out,
+              transform 0.7s ease-out;
+  will-change: opacity, transform;
 }
 
 .stagger-element.stagger-revealed {
   opacity: 1;
-  transform: translateY(0) scale(1);
+  transform: translateY(0);
+  will-change: auto;
 }
 
 /* ============================================================================
@@ -66,18 +70,14 @@
    ============================================================================ */
 
 .card, .testimonial-card, .pricing-card {
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 0.3s ease;
-  will-change: transform;
+  transition: box-shadow 0.35s ease, border-color 0.3s ease;
 }
 
 /* Glow effect on hover */
 .card:hover {
   box-shadow:
     0 10px 25px -3px rgba(11, 61, 145, 0.1),
-    0 4px 6px -2px rgba(11, 61, 145, 0.05),
-    0 0 0 1px rgba(11, 61, 145, 0.08);
+    0 4px 6px -2px rgba(11, 61, 145, 0.05);
 }
 
 .card-feature:hover {
@@ -94,18 +94,6 @@
   box-shadow:
     0 10px 25px -3px rgba(135, 206, 235, 0.2),
     0 4px 6px -2px rgba(135, 206, 235, 0.1);
-}
-
-/* Icon pulse on card hover */
-.card:hover .card-icon,
-.card:hover .service-icon {
-  animation: iconPop 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-@keyframes iconPop {
-  0%   { transform: scale(1); }
-  40%  { transform: scale(1.15); }
-  100% { transform: scale(1); }
 }
 
 /* ============================================================================

@@ -97,32 +97,22 @@ document.addEventListener('DOMContentLoaded', () => {
   // ── HERO PARALLAX ──
   const hero = document.querySelector('.hero');
   if (hero) {
+    let parallaxTicking = false;
     window.addEventListener('scroll', () => {
-      const scrollY = window.scrollY;
-      if (scrollY < window.innerHeight) {
-        hero.style.backgroundPositionY = `${scrollY * 0.4}px`;
-        const overlay = hero.querySelector('.hero-overlay');
-        if (overlay) overlay.style.opacity = Math.min(1, 0.85 + scrollY * 0.0003);
+      if (!parallaxTicking) {
+        window.requestAnimationFrame(() => {
+          const scrollY = window.scrollY;
+          if (scrollY < window.innerHeight) {
+            hero.style.backgroundPositionY = `${scrollY * 0.3}px`;
+          }
+          parallaxTicking = false;
+        });
+        parallaxTicking = true;
       }
     }, { passive: true });
   }
 
-  // ── SMOOTH CARD TILT ON HOVER ──
-  document.querySelectorAll('.card, .testimonial-card, .pricing-card').forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
-      const rotateX = (y - centerY) / centerY * -3;
-      const rotateY = (x - centerX) / centerX * 3;
-      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
-    });
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = '';
-    });
-  });
+  // ── (Card tilt removed — caused scroll jank) ──
 
   // ── TESTIMONIAL STARS SPARKLE ──
   document.querySelectorAll('.testimonial-rating').forEach(rating => {
