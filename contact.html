@@ -97,7 +97,10 @@
             <h3 class="mb-4">Envíanos un Mensaje</h3>
             <p class="text-muted mb-4">Completa el formulario y te responderemos en menos de 24 horas.</p>
             
-            <form action="/success" method="POST" data-netlify="true" name="contacto">
+            <form action="https://formsubmit.co/admin@aerobridge.cl" method="POST">
+                  <input type="hidden" name="_next" value="https://aerobridge.cl/contact">
+                  <input type="hidden" name="_subject" value="Nueva consulta desde AeroBridge">
+                  <input type="hidden" name="_captcha" value="false">
               <div class="row g-3">
                 <div class="col-md-6">
                   <label class="form-label" style="font-weight: var(--font-weight-semibold); color: var(--text-primary);">Nombre Completo *</label>

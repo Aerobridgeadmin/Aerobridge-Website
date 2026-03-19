@@ -611,7 +611,10 @@
           <div class="row justify-content-center">
             <div class="col-lg-8">
               <div class="cta-form">
-                <form action="/success" method="POST" data-netlify="true" name="consulta">
+                <form action="https://formsubmit.co/admin@aerobridge.cl" method="POST">
+                  <input type="hidden" name="_next" value="https://aerobridge.cl">
+                  <input type="hidden" name="_subject" value="Nueva consulta desde AeroBridge">
+                  <input type="hidden" name="_captcha" value="false">
                   <div class="row g-3">
                     <div class="col-md-6">
                       <input type="text" name="nombre" placeholder="Nombre Completo" required class="form-control">
