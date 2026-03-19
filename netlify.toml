@@ -34,21 +34,21 @@
 
 [[redirects]]
   from = "/como-empezar"
-  to = "/CómoEmpezar.html"
+  to = "/como-empezar.html"
   status = 200
 
 [[redirects]]
   from = "/preparacion-examenes"
-  to = "/Preparacióndeexámenes.html"
+  to = "/preparacion-examenes.html"
   status = 200
 
-# Form success page redirect
+# Form success page
 [[redirects]]
   from = "/success"
   to = "/contact.html"
   status = 200
 
-# Force HTTPS
+# Security headers
 [[headers]]
   for = "/*"
   [headers.values]
