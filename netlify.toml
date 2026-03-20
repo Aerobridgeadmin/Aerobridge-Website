@@ -42,6 +42,11 @@
   to = "/preparacion-examenes.html"
   status = 200
 
+[[redirects]]
+  from = "/consulta-gratis"
+  to = "/consulta-gratis.html"
+  status = 200
+
 # Form success page
 [[redirects]]
   from = "/success"
