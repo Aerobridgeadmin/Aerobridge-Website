@@ -26,61 +26,118 @@
   <link rel="stylesheet" href="assets/theme/css/design-system.css">
   <link rel="stylesheet" href="assets/theme/css/animations.css">
   <style>
-    .booking-hero{background:linear-gradient(135deg,#0B3D91 0%,#083169 40%,#061d3f 100%);padding:100px 0 40px;position:relative;overflow:hidden}
+    /* ── HERO ── */
+    .booking-hero{background:linear-gradient(135deg,#0B3D91 0%,#083169 40%,#061d3f 100%);padding:100px 0 50px;position:relative;overflow:hidden}
     .booking-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 50%,rgba(135,206,235,.08) 0%,transparent 60%),radial-gradient(circle at 80% 20%,rgba(135,206,235,.05) 0%,transparent 50%)}
     .booking-hero *{position:relative;z-index:1}
-    .booking-hero h1{color:#fff;font-size:2.4rem;font-weight:800;line-height:1.15;margin-bottom:12px}
+    .booking-hero h1{color:#fff;font-size:2.5rem;font-weight:800;line-height:1.15;margin-bottom:12px}
     .booking-hero h1 span{color:#87CEEB}
-    .booking-hero p{color:rgba(255,255,255,.8);font-size:1.1rem}
-    .booking-container{max-width:780px;margin:-40px auto 60px;padding:0 16px;position:relative;z-index:2}
-    .steps{display:flex;gap:0;margin-bottom:32px}
-    .step-item{flex:1;text-align:center;position:relative}
-    .step-num{width:36px;height:36px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:.9rem;margin-bottom:6px;transition:.3s;background:var(--gray-200);color:var(--gray-500)}
-    .step-item.active .step-num{background:var(--brand-primary);color:#fff;box-shadow:0 4px 12px rgba(11,61,145,.3)}
-    .step-item.completed .step-num{background:#28a745;color:#fff}
-    .step-label{font-size:.75rem;font-weight:600;color:var(--gray-500);display:block}
+    .booking-hero p{color:rgba(255,255,255,.75);font-size:1.05rem;max-width:520px;margin:0 auto}
+    .booking-container{max-width:800px;margin:-48px auto 60px;padding:0 16px;position:relative;z-index:2}
+
+    /* ── STEPS ── */
+    .steps{display:flex;margin-bottom:28px;background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(0,0,0,.06);overflow:hidden}
+    .step-item{flex:1;display:flex;align-items:center;justify-content:center;gap:10px;padding:16px 12px;transition:.3s;cursor:default;border-bottom:3px solid transparent}
+    .step-item.active{border-color:var(--brand-primary);background:rgba(11,61,145,.03)}
+    .step-item.completed{border-color:#22c55e;background:rgba(34,197,94,.03)}
+    .step-num{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.8rem;transition:.3s;background:var(--gray-200);color:var(--gray-500);flex-shrink:0}
+    .step-item.active .step-num{background:var(--brand-primary);color:#fff;box-shadow:0 3px 10px rgba(11,61,145,.3)}
+    .step-item.completed .step-num{background:#22c55e;color:#fff}
+    .step-label{font-size:.8rem;font-weight:600;color:var(--gray-500);white-space:nowrap}
     .step-item.active .step-label{color:var(--brand-primary)}
-    .step-item.completed .step-label{color:#28a745}
-    .step-line{position:absolute;top:18px;left:50%;right:-50%;height:2px;background:var(--gray-200);z-index:-1}
-    .step-item.completed .step-line{background:#28a745}
-    .step-item:last-child .step-line{display:none}
-    .booking-card{background:#fff;border-radius:16px;padding:36px;box-shadow:0 8px 40px rgba(0,0,0,.08);border:1px solid rgba(0,0,0,.06)}
-    .form-label{font-weight:600;font-size:.85rem;color:var(--text-primary);margin-bottom:5px}
-    .form-control,.form-select{border:1.5px solid var(--gray-200);border-radius:10px;padding:12px 16px;font-size:.95rem;transition:border-color .2s}
-    .form-control:focus,.form-select:focus{border-color:var(--brand-primary);box-shadow:0 0 0 3px rgba(11,61,145,.1)}
-    .cal-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
-    .cal-header h4{font-size:1.1rem;font-weight:700;color:var(--text-primary);margin:0}
-    .cal-nav{background:none;border:1px solid var(--gray-200);border-radius:8px;width:36px;height:36px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;font-size:1.1rem;transition:.2s;color:var(--gray-600)}
-    .cal-nav:hover{background:var(--gray-100);border-color:var(--brand-primary);color:var(--brand-primary)}
-    .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;text-align:center}
-    .cal-dow{font-size:.7rem;font-weight:700;color:var(--gray-500);text-transform:uppercase;padding:4px 0}
-    .cal-day{aspect-ratio:1;display:flex;align-items:center;justify-content:center;border-radius:10px;font-size:.9rem;font-weight:500;cursor:pointer;transition:.2s;border:2px solid transparent}
-    .cal-day:hover:not(.disabled):not(.selected){background:rgba(11,61,145,.06);border-color:rgba(11,61,145,.2)}
-    .cal-day.disabled{color:var(--gray-300);cursor:default}
-    .cal-day.today{font-weight:700;color:var(--brand-primary)}
-    .cal-day.selected{background:var(--brand-primary);color:#fff;border-color:var(--brand-primary);font-weight:700;box-shadow:0 4px 10px rgba(11,61,145,.25)}
-    .cal-day.weekend{color:var(--gray-400)}
-    .slots-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+    .step-item.completed .step-label{color:#16a34a}
+    @media(max-width:500px){.step-label{display:none}}
+
+    /* ── CARD ── */
+    .booking-card{background:#fff;border-radius:16px;padding:40px;box-shadow:0 4px 30px rgba(0,0,0,.06);border:1px solid rgba(0,0,0,.05)}
+    @media(max-width:600px){.booking-card{padding:24px 20px}}
+
+    /* ── FORM FIELDS ── */
+    .field{margin-bottom:18px}
+    .field-label{font-weight:700;font-size:.8rem;color:var(--text-primary);margin-bottom:6px;display:block;letter-spacing:.02em;text-transform:uppercase}
+    .field-label .req{color:var(--brand-secondary);margin-left:2px}
+    .field-input{width:100%;border:2px solid #e5e7eb;border-radius:12px;padding:13px 16px;font-size:.95rem;font-family:inherit;transition:border-color .2s,box-shadow .2s;background:#fff;outline:none;color:var(--text-primary)}
+    .field-input::placeholder{color:#9ca3af}
+    .field-input:focus{border-color:var(--brand-primary);box-shadow:0 0 0 4px rgba(11,61,145,.08)}
+    textarea.field-input{resize:vertical;min-height:80px}
+
+    /* ── CUSTOM DROPDOWN ── */
+    .custom-select{position:relative;width:100%}
+    .custom-select-trigger{width:100%;border:2px solid #e5e7eb;border-radius:12px;padding:13px 44px 13px 16px;font-size:.95rem;font-family:inherit;background:#fff;cursor:pointer;transition:border-color .2s,box-shadow .2s;color:var(--text-primary);display:flex;align-items:center;user-select:none;position:relative}
+    .custom-select-trigger.placeholder{color:#9ca3af}
+    .custom-select-trigger:hover{border-color:#cbd5e1}
+    .custom-select-trigger:focus,.custom-select.open .custom-select-trigger{border-color:var(--brand-primary);box-shadow:0 0 0 4px rgba(11,61,145,.08);outline:none}
+    .custom-select-arrow{position:absolute;right:14px;top:50%;transform:translateY(-50%);width:20px;height:20px;transition:transform .25s;pointer-events:none}
+    .custom-select-arrow svg{width:20px;height:20px;color:#9ca3af}
+    .custom-select.open .custom-select-arrow{transform:translateY(-50%) rotate(180deg)}
+    .custom-select-dropdown{position:absolute;top:calc(100% + 6px);left:0;right:0;background:#fff;border:2px solid var(--brand-primary);border-radius:14px;box-shadow:0 12px 40px rgba(0,0,0,.12);max-height:300px;overflow-y:auto;z-index:100;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .2s,transform .2s,visibility .2s}
+    .custom-select.open .custom-select-dropdown{opacity:1;visibility:visible;transform:translateY(0)}
+    .custom-select-option{padding:12px 16px;cursor:pointer;font-size:.95rem;color:var(--text-primary);transition:background .15s;display:flex;align-items:center;gap:10px;border-bottom:1px solid #f3f4f6}
+    .custom-select-option:last-child{border:none}
+    .custom-select-option:hover{background:rgba(11,61,145,.04)}
+    .custom-select-option.selected{background:rgba(11,61,145,.06);font-weight:600;color:var(--brand-primary)}
+    .custom-select-option .opt-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.1rem}
+    .custom-select-option .opt-label{font-weight:600;font-size:.9rem}
+    .custom-select-option .opt-desc{font-size:.75rem;color:var(--text-secondary);margin-top:1px}
+
+    /* ── CALENDAR ── */
+    .cal-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+    .cal-header h4{font-size:1.05rem;font-weight:700;color:var(--text-primary);margin:0}
+    .cal-nav{background:#fff;border:2px solid #e5e7eb;border-radius:10px;width:38px;height:38px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:.2s;color:var(--gray-600)}
+    .cal-nav:hover{border-color:var(--brand-primary);color:var(--brand-primary);background:rgba(11,61,145,.03)}
+    .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center}
+    .cal-dow{font-size:.65rem;font-weight:700;color:var(--gray-400);text-transform:uppercase;padding:6px 0;letter-spacing:.05em}
+    .cal-day{aspect-ratio:1;display:flex;align-items:center;justify-content:center;border-radius:10px;font-size:.9rem;font-weight:500;cursor:pointer;transition:.2s;border:2px solid transparent;position:relative}
+    .cal-day:hover:not(.disabled):not(.selected){background:rgba(11,61,145,.04);border-color:rgba(11,61,145,.15)}
+    .cal-day.disabled{color:#d1d5db;cursor:default}
+    .cal-day.today{font-weight:800;color:var(--brand-primary)}
+    .cal-day.today::after{content:'';position:absolute;bottom:3px;left:50%;transform:translateX(-50%);width:4px;height:4px;border-radius:50%;background:var(--brand-primary)}
+    .cal-day.selected{background:var(--brand-primary);color:#fff;border-color:var(--brand-primary);font-weight:700;box-shadow:0 4px 12px rgba(11,61,145,.3)}
+    .cal-day.selected::after{display:none}
+
+    /* ── TIME SLOTS ── */
+    .slots-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
     @media(max-width:600px){.slots-grid{grid-template-columns:repeat(3,1fr)}}
-    .slot{padding:12px 8px;border:2px solid var(--gray-200);border-radius:10px;text-align:center;cursor:pointer;font-weight:600;font-size:.95rem;transition:.2s;background:#fff}
-    .slot:hover{border-color:var(--brand-primary);background:rgba(11,61,145,.04)}
-    .slot.selected{border-color:var(--brand-primary);background:var(--brand-primary);color:#fff;box-shadow:0 4px 10px rgba(11,61,145,.25)}
-    .btn-booking{background:var(--brand-primary);color:#fff;border:none;border-radius:50px;padding:14px 32px;font-size:1.05rem;font-weight:700;width:100%;cursor:pointer;transition:.25s}
-    .btn-booking:hover{background:var(--brand-primary-dark);transform:translateY(-1px);box-shadow:0 6px 20px rgba(11,61,145,.3)}
-    .btn-booking:disabled{opacity:.5;cursor:not-allowed;transform:none;box-shadow:none}
-    .btn-back{background:none;border:1px solid var(--gray-200);border-radius:50px;padding:12px 24px;font-size:.95rem;font-weight:600;cursor:pointer;color:var(--gray-600);transition:.2s}
-    .btn-back:hover{border-color:var(--gray-400);background:var(--gray-50)}
-    .confirm-card{background:linear-gradient(135deg,#f0fdf4,#ecfdf5);border:2px solid #bbf7d0;border-radius:14px;padding:32px;text-align:center}
-    .confirm-card .check{width:64px;height:64px;background:#22c55e;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;margin-bottom:16px}
-    .confirm-card h3{font-size:1.5rem;font-weight:800;color:#166534;margin-bottom:8px}
-    .confirm-card p{color:#15803d;font-size:1rem}
-    .meet-btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#1d4ed8,#2563eb);color:#fff;padding:14px 32px;border-radius:12px;font-weight:700;font-size:1.05rem;text-decoration:none;transition:.25s;box-shadow:0 4px 14px rgba(29,78,216,.35);margin-top:16px}
-    .meet-btn:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(29,78,216,.45);color:#fff}
-    .trust-strip{background:var(--gray-50);border:1px solid var(--gray-200);border-radius:12px;padding:20px;margin-top:24px;display:flex;justify-content:center;gap:32px;flex-wrap:wrap}
-    .trust-item{display:flex;align-items:center;gap:8px;font-size:.85rem;font-weight:600;color:var(--gray-600)}
-    .trust-item svg{color:var(--brand-primary);flex-shrink:0}
-    .fade-in{animation:fadeIn .3s ease-in-out}
-    @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+    .slot{padding:11px 6px;border:2px solid #e5e7eb;border-radius:10px;text-align:center;cursor:pointer;font-weight:600;font-size:.9rem;transition:.2s;background:#fff}
+    .slot:hover{border-color:var(--brand-primary);background:rgba(11,61,145,.03)}
+    .slot.selected{border-color:var(--brand-primary);background:var(--brand-primary);color:#fff;box-shadow:0 4px 12px rgba(11,61,145,.3)}
+    .slot-period{display:block;font-size:.6rem;font-weight:500;opacity:.65;margin-top:1px;text-transform:uppercase;letter-spacing:.04em}
+
+    /* ── BUTTONS ── */
+    .btn-book{background:linear-gradient(135deg,var(--brand-primary),#1046a0);color:#fff;border:none;border-radius:12px;padding:16px 32px;font-size:1.05rem;font-weight:700;width:100%;cursor:pointer;transition:.3s;font-family:inherit;letter-spacing:.01em;position:relative;overflow:hidden}
+    .btn-book::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent 0%,rgba(255,255,255,.08) 50%,transparent 100%);opacity:0;transition:.3s}
+    .btn-book:hover::after{opacity:1}
+    .btn-book:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(11,61,145,.3)}
+    .btn-book:disabled{opacity:.4;cursor:not-allowed;transform:none;box-shadow:none}
+    .btn-book:disabled::after{display:none}
+    .btn-back{background:#fff;border:2px solid #e5e7eb;border-radius:12px;padding:14px 24px;font-size:.95rem;font-weight:600;cursor:pointer;color:var(--gray-600);transition:.2s;font-family:inherit}
+    .btn-back:hover{border-color:var(--brand-primary);color:var(--brand-primary);background:rgba(11,61,145,.02)}
+
+    /* ── CONFIRMATION ── */
+    .confirm-card{background:linear-gradient(135deg,#f0fdf4 0%,#ecfdf5 100%);border:2px solid #86efac;border-radius:16px;padding:40px 32px;text-align:center}
+    .confirm-check{width:72px;height:72px;background:linear-gradient(135deg,#22c55e,#16a34a);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;margin-bottom:20px;box-shadow:0 6px 20px rgba(34,197,94,.3);animation:popIn .4s cubic-bezier(.175,.885,.32,1.275)}
+    @keyframes popIn{0%{transform:scale(0)}100%{transform:scale(1)}}
+    .confirm-card h3{font-size:1.6rem;font-weight:800;color:#14532d;margin-bottom:8px}
+    .confirm-card p{color:#166534;font-size:1rem}
+    .confirm-details{margin-top:24px;background:#fff;border-radius:12px;border:1px solid #d1fae5;overflow:hidden}
+    .confirm-row{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-bottom:1px solid #f0fdf4;font-size:.9rem}
+    .confirm-row:last-child{border:none}
+    .confirm-row-label{font-weight:700;color:#166534}
+    .confirm-row-value{color:#15803d;font-weight:500;text-align:right}
+    .meet-btn{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#1d4ed8,#2563eb);color:#fff;padding:16px 36px;border-radius:14px;font-weight:700;font-size:1.05rem;text-decoration:none;transition:.3s;box-shadow:0 6px 20px rgba(29,78,216,.3);margin-top:20px}
+    .meet-btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(29,78,216,.4);color:#fff}
+
+    /* ── TRUST STRIP ── */
+    .trust-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:24px}
+    @media(max-width:700px){.trust-strip{grid-template-columns:repeat(2,1fr)}}
+    .trust-chip{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px 12px;display:flex;align-items:center;gap:10px;font-size:.8rem;font-weight:600;color:var(--gray-600)}
+    .trust-chip-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .trust-chip-icon svg{width:18px;height:18px}
+
+    .fade-in{animation:fadeIn .35s ease-out}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+    .loading-dots::after{content:'';animation:dots 1.2s steps(4) infinite}
+    @keyframes dots{0%{content:''}25%{content:'.'}50%{content:'..'}75%{content:'...'}}
   </style>
 </head>
 <body>
@@ -106,6 +163,7 @@
   </div>
 </nav>
 
+<!-- Hero -->
 <section class="booking-hero">
   <div class="container text-center">
     <h1>Agenda Tu Consulta <span>Gratuita de 15 Min</span></h1>
@@ -114,67 +172,155 @@
 </section>
 
 <div class="booking-container">
+  <!-- Steps -->
   <div class="steps">
-    <div class="step-item active" id="step-ind-1"><div class="step-line"></div><span class="step-num">1</span><span class="step-label">Tus Datos</span></div>
-    <div class="step-item" id="step-ind-2"><div class="step-line"></div><span class="step-num">2</span><span class="step-label">Fecha y Hora</span></div>
-    <div class="step-item" id="step-ind-3"><span class="step-num">3</span><span class="step-label">Confirmación</span></div>
+    <div class="step-item active" id="si-1"><span class="step-num">1</span><span class="step-label">Tus Datos</span></div>
+    <div class="step-item" id="si-2"><span class="step-num">2</span><span class="step-label">Fecha y Hora</span></div>
+    <div class="step-item" id="si-3"><span class="step-num">3</span><span class="step-label">Confirmación</span></div>
   </div>
 
-  <!-- STEP 1 -->
+  <!-- STEP 1: Info -->
   <div class="booking-card fade-in" id="step1">
-    <h3 style="font-size:1.3rem;font-weight:700;margin-bottom:4px;">Cuéntanos sobre ti</h3>
-    <p style="color:var(--text-secondary);font-size:.9rem;margin-bottom:24px;">Completa tus datos para personalizar la consulta.</p>
-    <div class="row g-3">
-      <div class="col-12"><label class="form-label" for="b-name">Nombre Completo *</label><input type="text" id="b-name" class="form-control" placeholder="Tu nombre y apellido" required></div>
-      <div class="col-md-6"><label class="form-label" for="b-email">Email *</label><input type="email" id="b-email" class="form-control" placeholder="tu@email.com" required></div>
-      <div class="col-md-6"><label class="form-label" for="b-phone">WhatsApp *</label><input type="tel" id="b-phone" class="form-control" placeholder="+56 9 XXXX XXXX" required></div>
-      <div class="col-12"><label class="form-label" for="b-interest">¿Qué te interesa? *</label><select id="b-interest" class="form-select" required><option value="">Selecciona una opción</option><option value="Inglés General">Clases de Inglés General</option><option value="FAA PPL">Preparación FAA — Piloto Privado</option><option value="FAA IFR/CPL">Preparación FAA — Instrument/Comercial</option><option value="FAA ATP">Preparación FAA — ATP</option><option value="ICAO English">Inglés Aeronáutico (ICAO)</option><option value="Asesoria Escuelas">Asesoría Escuelas de Vuelo</option><option value="Paquete Combinado">Paquete Combinado (Descuento)</option><option value="Otro">Otro / No estoy seguro</option></select></div>
-      <div class="col-12"><label class="form-label" for="b-message">Cuéntanos sobre tus metas (opcional)</label><textarea id="b-message" class="form-control" rows="3" placeholder="Ej: Quiero obtener mi PPL en Estados Unidos, necesito mejorar mi inglés primero..."></textarea></div>
-      <div class="col-12" style="margin-top:8px;"><button class="btn-booking" onclick="goToStep2()">Elegir Fecha y Hora →</button></div>
+    <h3 style="font-size:1.35rem;font-weight:800;margin-bottom:4px;color:var(--text-primary);">Cuéntanos sobre ti</h3>
+    <p style="color:var(--text-secondary);font-size:.9rem;margin-bottom:28px;">Completa tus datos para personalizar la consulta.</p>
+
+    <div class="field">
+      <label class="field-label">Nombre Completo <span class="req">*</span></label>
+      <input type="text" id="b-name" class="field-input" placeholder="Tu nombre y apellido">
     </div>
+    <div class="row g-3">
+      <div class="col-md-6">
+        <div class="field">
+          <label class="field-label">Email <span class="req">*</span></label>
+          <input type="email" id="b-email" class="field-input" placeholder="tu@email.com">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="field">
+          <label class="field-label">WhatsApp <span class="req">*</span></label>
+          <input type="tel" id="b-phone" class="field-input" placeholder="+56 9 XXXX XXXX">
+        </div>
+      </div>
+    </div>
+
+    <!-- Custom Dropdown -->
+    <div class="field">
+      <label class="field-label">¿Qué te interesa? <span class="req">*</span></label>
+      <div class="custom-select" id="interestSelect">
+        <div class="custom-select-trigger placeholder" tabindex="0" id="interestTrigger">
+          Selecciona una opción
+          <span class="custom-select-arrow"><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></span>
+        </div>
+        <div class="custom-select-dropdown" id="interestDropdown">
+          <div class="custom-select-option" data-value="Inglés General">
+            <div class="opt-icon" style="background:rgba(59,130,246,.1);color:#3b82f6;">🗣️</div>
+            <div><div class="opt-label">Clases de Inglés General</div><div class="opt-desc">Todos los niveles, clases individuales online</div></div>
+          </div>
+          <div class="custom-select-option" data-value="FAA PPL">
+            <div class="opt-icon" style="background:rgba(245,158,11,.1);color:#f59e0b;">✈️</div>
+            <div><div class="opt-label">Preparación FAA — Piloto Privado</div><div class="opt-desc">PPL Knowledge Test con material completo</div></div>
+          </div>
+          <div class="custom-select-option" data-value="FAA IFR/CPL">
+            <div class="opt-icon" style="background:rgba(168,85,247,.1);color:#a855f7;">🧭</div>
+            <div><div class="opt-label">Preparación FAA — Instrument/Comercial</div><div class="opt-desc">IFR y CPL Knowledge Tests</div></div>
+          </div>
+          <div class="custom-select-option" data-value="FAA ATP">
+            <div class="opt-icon" style="background:rgba(239,68,68,.1);color:#ef4444;">👨‍✈️</div>
+            <div><div class="opt-label">Preparación FAA — ATP</div><div class="opt-desc">Airline Transport Pilot exam prep</div></div>
+          </div>
+          <div class="custom-select-option" data-value="ICAO English">
+            <div class="opt-icon" style="background:rgba(34,197,94,.1);color:#22c55e;">🌐</div>
+            <div><div class="opt-label">Inglés Aeronáutico (ICAO)</div><div class="opt-desc">Preparación ICAO Nivel 4, 5 y 6</div></div>
+          </div>
+          <div class="custom-select-option" data-value="Asesoria Escuelas">
+            <div class="opt-icon" style="background:rgba(14,165,233,.1);color:#0ea5e9;">🏫</div>
+            <div><div class="opt-label">Asesoría Escuelas de Vuelo</div><div class="opt-desc">USA, Canadá y Europa — orientación completa</div></div>
+          </div>
+          <div class="custom-select-option" data-value="Paquete Combinado">
+            <div class="opt-icon" style="background:rgba(236,72,153,.1);color:#ec4899;">📦</div>
+            <div><div class="opt-label">Paquete Combinado</div><div class="opt-desc">Combina servicios con descuento especial</div></div>
+          </div>
+          <div class="custom-select-option" data-value="Otro">
+            <div class="opt-icon" style="background:rgba(107,114,128,.1);color:#6b7280;">💬</div>
+            <div><div class="opt-label">Otro / No estoy seguro</div><div class="opt-desc">Conversemos sobre tus opciones</div></div>
+          </div>
+        </div>
+      </div>
+      <input type="hidden" id="b-interest" value="">
+    </div>
+
+    <div class="field">
+      <label class="field-label">Cuéntanos sobre tus metas <span style="color:var(--text-secondary);font-weight:500;text-transform:none;font-size:.75rem;">(opcional)</span></label>
+      <textarea id="b-message" class="field-input" placeholder="Ej: Quiero obtener mi PPL en Estados Unidos, necesito mejorar mi inglés primero..."></textarea>
+    </div>
+
+    <button class="btn-book" onclick="goToStep2()">Elegir Fecha y Hora →</button>
   </div>
 
-  <!-- STEP 2 -->
+  <!-- STEP 2: Calendar + Time -->
   <div class="booking-card fade-in" id="step2" style="display:none;">
     <div class="row g-4">
       <div class="col-lg-7">
-        <h4 style="font-size:1.1rem;font-weight:700;margin-bottom:16px;">Elige una fecha</h4>
-        <div class="cal-header"><button class="cal-nav" onclick="changeMonth(-1)">&#8592;</button><h4 id="calMonthLabel"></h4><button class="cal-nav" onclick="changeMonth(1)">&#8594;</button></div>
-        <div class="cal-grid" id="calGrid"><div class="cal-dow">Lun</div><div class="cal-dow">Mar</div><div class="cal-dow">Mié</div><div class="cal-dow">Jue</div><div class="cal-dow">Vie</div><div class="cal-dow">Sáb</div><div class="cal-dow">Dom</div></div>
+        <p style="font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--gray-400);margin-bottom:12px;">Elige una fecha</p>
+        <div class="cal-header">
+          <button class="cal-nav" onclick="changeMonth(-1)">
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+          </button>
+          <h4 id="calMonthLabel"></h4>
+          <button class="cal-nav" onclick="changeMonth(1)">
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+          </button>
+        </div>
+        <div class="cal-grid" id="calGrid">
+          <div class="cal-dow">Lun</div><div class="cal-dow">Mar</div><div class="cal-dow">Mié</div>
+          <div class="cal-dow">Jue</div><div class="cal-dow">Vie</div><div class="cal-dow">Sáb</div><div class="cal-dow">Dom</div>
+        </div>
       </div>
       <div class="col-lg-5">
-        <h4 style="font-size:1.1rem;font-weight:700;margin-bottom:16px;" id="slotsTitle">Horarios disponibles</h4>
-        <div id="slotsContainer"><p style="color:var(--gray-500);font-size:.9rem;text-align:center;padding:40px 0;">&#8592; Selecciona una fecha primero</p></div>
+        <p style="font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--gray-400);margin-bottom:6px;">Horario</p>
+        <p style="font-size:1rem;font-weight:700;color:var(--text-primary);margin-bottom:14px;" id="slotsTitle">Selecciona una fecha</p>
+        <div id="slotsContainer">
+          <div style="text-align:center;padding:50px 10px;">
+            <svg width="40" height="40" fill="none" stroke="#d1d5db" stroke-width="1.5" viewBox="0 0 24 24" style="margin-bottom:10px;"><path d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/></svg>
+            <p style="color:#9ca3af;font-size:.85rem;font-weight:500;">Elige un día en el calendario</p>
+          </div>
+        </div>
       </div>
     </div>
-    <div style="display:flex;gap:12px;margin-top:24px;">
-      <button class="btn-back" onclick="goToStep(1)">&#8592; Volver</button>
-      <button class="btn-booking" id="btnConfirm" onclick="submitBooking()" disabled>Confirmar Consulta →</button>
+    <div style="display:flex;gap:12px;margin-top:28px;">
+      <button class="btn-back" onclick="goToStep(1)">← Volver</button>
+      <button class="btn-book" id="btnConfirm" onclick="submitBooking()" disabled style="flex:1;">Confirmar Consulta →</button>
     </div>
   </div>
 
-  <!-- STEP 3 -->
+  <!-- STEP 3: Confirmation -->
   <div class="booking-card fade-in" id="step3" style="display:none;">
     <div class="confirm-card">
-      <div class="check"><svg width="32" height="32" fill="#fff" viewBox="0 0 16 16"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/></svg></div>
+      <div class="confirm-check"><svg width="36" height="36" fill="#fff" viewBox="0 0 16 16"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/></svg></div>
       <h3>¡Consulta Agendada!</h3>
       <p>Revisa tu email para los detalles y el enlace de Google Meet.</p>
+      <div class="confirm-details">
+        <div class="confirm-row"><span class="confirm-row-label">Nombre</span><span class="confirm-row-value" id="conf-name"></span></div>
+        <div class="confirm-row"><span class="confirm-row-label">Fecha</span><span class="confirm-row-value" id="conf-date"></span></div>
+        <div class="confirm-row"><span class="confirm-row-label">Hora</span><span class="confirm-row-value" id="conf-time"></span></div>
+        <div class="confirm-row"><span class="confirm-row-label">Interés</span><span class="confirm-row-value" id="conf-interest"></span></div>
+      </div>
     </div>
-    <div style="margin-top:24px;padding:20px;background:#f8fafc;border-radius:12px;">
-      <div style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid #e2e8f0;"><span style="font-weight:600;">Nombre</span><span id="conf-name" style="color:var(--text-secondary);"></span></div>
-      <div style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid #e2e8f0;"><span style="font-weight:600;">Fecha</span><span id="conf-date" style="color:var(--text-secondary);"></span></div>
-      <div style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid #e2e8f0;"><span style="font-weight:600;">Hora</span><span id="conf-time" style="color:var(--text-secondary);"></span></div>
-      <div style="display:flex;justify-content:space-between;padding:12px 0;"><span style="font-weight:600;">Interés</span><span id="conf-interest" style="color:var(--text-secondary);"></span></div>
+    <div style="text-align:center;margin-top:24px;">
+      <a href="#" id="conf-meet-link" target="_blank" class="meet-btn">
+        <svg width="22" height="22" fill="currentColor" viewBox="0 0 16 16"><path d="M0 5a2 2 0 0 1 2-2h7.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 4.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 13H2a2 2 0 0 1-2-2V5z"/></svg>
+        Abrir Google Meet
+      </a>
     </div>
-    <div style="text-align:center;margin-top:20px;"><a href="#" id="conf-meet-link" target="_blank" class="meet-btn"><svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M0 5a2 2 0 0 1 2-2h7.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 4.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 13H2a2 2 0 0 1-2-2V5z"/></svg>Abrir Google Meet</a></div>
-    <div style="text-align:center;margin-top:24px;"><a href="/" class="btn-back" style="text-decoration:none;display:inline-block;">Volver al Inicio</a></div>
+    <div style="text-align:center;margin-top:20px;"><a href="/" class="btn-back" style="text-decoration:none;display:inline-block;">← Volver al Inicio</a></div>
   </div>
 
+  <!-- Trust chips -->
   <div class="trust-strip">
-    <div class="trust-item"><svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M5.338 1.59a61.44 61.44 0 0 0-2.837.856.481.481 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.725 10.725 0 0 0 2.287 2.233c.346.244.652.42.893.533.12.057.218.095.293.118a.55.55 0 0 0 .101.025.615.615 0 0 0 .1-.025c.076-.023.174-.061.294-.118.24-.113.547-.29.893-.533a10.726 10.726 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524z"/></svg>100% Confidencial</div>
-    <div class="trust-item"><svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>15 min exactos</div>
-    <div class="trust-item"><svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M0 5a2 2 0 0 1 2-2h7.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 4.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 13H2a2 2 0 0 1-2-2V5z"/></svg>Google Meet incluido</div>
-    <div class="trust-item"><svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828z"/><path d="M7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687z"/></svg>Sin compromiso</div>
+    <div class="trust-chip"><div class="trust-chip-icon" style="background:rgba(34,197,94,.08);color:#22c55e;"><svg fill="currentColor" viewBox="0 0 16 16"><path d="M5.338 1.59a61.44 61.44 0 0 0-2.837.856.481.481 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.725 10.725 0 0 0 2.287 2.233c.346.244.652.42.893.533a.55.55 0 0 0 .394 0c.24-.113.547-.29.893-.533a10.726 10.726 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39 61.44 61.44 0 0 0-2.837-.856C6.552 1.29 8 1.067 8 1.067s1.448.223 2.662.524z"/></svg></div>100% Confidencial</div>
+    <div class="trust-chip"><div class="trust-chip-icon" style="background:rgba(59,130,246,.08);color:#3b82f6;"><svg fill="currentColor" viewBox="0 0 16 16"><path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg></div>15 min exactos</div>
+    <div class="trust-chip"><div class="trust-chip-icon" style="background:rgba(168,85,247,.08);color:#a855f7;"><svg fill="currentColor" viewBox="0 0 16 16"><path d="M0 5a2 2 0 0 1 2-2h7.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 4.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 13H2a2 2 0 0 1-2-2V5z"/></svg></div>Google Meet</div>
+    <div class="trust-chip"><div class="trust-chip-icon" style="background:rgba(245,158,11,.08);color:#f59e0b;"><svg fill="currentColor" viewBox="0 0 16 16"><path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828z"/><path d="M7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687z"/></svg></div>Sin compromiso</div>
   </div>
 </div>
 
@@ -193,81 +339,199 @@
 <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="assets/theme/js/animations.js"></script>
 <script>
-const API_BASE='https://aerobridge-dashboard.vercel.app/api';
-const MONTHS_ES=['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
-const DAYS_ES=['domingo','lunes','martes','miércoles','jueves','viernes','sábado'];
-let currentMonth,currentYear,selectedDate=null,selectedSlot=null,slotsCache={};
+/* ═══════════════════════════════════════════════
+   AeroBridge Consultation Booking — JS
+   ═══════════════════════════════════════════════ */
+const API_BASE = 'https://dashboard.aerobridge.cl/api';
+const MONTHS_ES = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+const DAYS_ES = ['domingo','lunes','martes','miércoles','jueves','viernes','sábado'];
+let currentMonth, currentYear, selectedDate = null, selectedSlot = null, slotsCache = {};
 
-function getUTM(){const p=new URLSearchParams(window.location.search);return{utm_source:p.get('utm_source')||'',utm_campaign:p.get('utm_campaign')||'',utm_medium:p.get('utm_medium')||''};}
-
-function goToStep(n){
-  document.querySelectorAll('.booking-card').forEach(c=>c.style.display='none');
-  const s=document.getElementById('step'+n);s.style.display='';s.classList.add('fade-in');
-  document.querySelectorAll('.step-item').forEach((el,i)=>{el.classList.remove('active','completed');if(i+1<n)el.classList.add('completed');if(i+1===n)el.classList.add('active');});
-  window.scrollTo({top:200,behavior:'smooth'});
+function getUTM() {
+  const p = new URLSearchParams(window.location.search);
+  return { utm_source: p.get('utm_source') || '', utm_campaign: p.get('utm_campaign') || '', utm_medium: p.get('utm_medium') || '' };
 }
 
-function goToStep2(){
-  const n=document.getElementById('b-name').value.trim(),e=document.getElementById('b-email').value.trim(),p=document.getElementById('b-phone').value.trim(),i=document.getElementById('b-interest').value;
-  if(!n||!e||!p||!i){alert('Por favor completa todos los campos obligatorios.');return;}
-  if(!/\S+@\S+\.\S+/.test(e)){alert('Por favor ingresa un email válido.');return;}
-  const now=new Date();currentMonth=now.getMonth();currentYear=now.getFullYear();renderCalendar();goToStep(2);
+/* ── CUSTOM DROPDOWN ── */
+(function() {
+  const sel = document.getElementById('interestSelect');
+  const trigger = document.getElementById('interestTrigger');
+  const dropdown = document.getElementById('interestDropdown');
+  const hidden = document.getElementById('b-interest');
+
+  trigger.addEventListener('click', function(e) {
+    e.stopPropagation();
+    sel.classList.toggle('open');
+  });
+  trigger.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); sel.classList.toggle('open'); }
+    if (e.key === 'Escape') sel.classList.remove('open');
+  });
+  document.addEventListener('click', function() { sel.classList.remove('open'); });
+  dropdown.addEventListener('click', function(e) { e.stopPropagation(); });
+
+  dropdown.querySelectorAll('.custom-select-option').forEach(function(opt) {
+    opt.addEventListener('click', function() {
+      const val = this.dataset.value;
+      const label = this.querySelector('.opt-label').textContent;
+      hidden.value = val;
+      trigger.textContent = '';
+      trigger.classList.remove('placeholder');
+      trigger.innerHTML = label + '<span class="custom-select-arrow"><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></span>';
+      dropdown.querySelectorAll('.custom-select-option').forEach(function(o) { o.classList.remove('selected'); });
+      opt.classList.add('selected');
+      sel.classList.remove('open');
+    });
+  });
+})();
+
+/* ── STEP NAVIGATION ── */
+function goToStep(n) {
+  document.querySelectorAll('.booking-card').forEach(function(c) { c.style.display = 'none'; });
+  var s = document.getElementById('step' + n);
+  s.style.display = '';
+  s.classList.remove('fade-in');
+  void s.offsetWidth;
+  s.classList.add('fade-in');
+  for (var i = 1; i <= 3; i++) {
+    var el = document.getElementById('si-' + i);
+    el.classList.remove('active', 'completed');
+    if (i < n) el.classList.add('completed');
+    if (i === n) el.classList.add('active');
+  }
+  window.scrollTo({ top: 180, behavior: 'smooth' });
 }
 
-function renderCalendar(){
-  document.getElementById('calMonthLabel').textContent=MONTHS_ES[currentMonth]+' '+currentYear;
-  const grid=document.getElementById('calGrid'),dows=Array.from(grid.querySelectorAll('.cal-dow'));
-  grid.innerHTML='';dows.forEach(d=>grid.appendChild(d));
-  const first=new Date(currentYear,currentMonth,1);let start=first.getDay()-1;if(start<0)start=6;
-  const days=new Date(currentYear,currentMonth+1,0).getDate(),today=new Date();today.setHours(0,0,0,0);
-  for(let i=0;i<start;i++){const e=document.createElement('div');e.className='cal-day disabled';grid.appendChild(e);}
-  for(let d=1;d<=days;d++){
-    const dt=new Date(currentYear,currentMonth,d),ds=dt.toISOString().split('T')[0],wk=dt.getDay()===0||dt.getDay()===6,past=dt<today,td=dt.getTime()===today.getTime(),sel=ds===selectedDate;
-    const el=document.createElement('div');el.className='cal-day';el.textContent=d;
-    if(wk||past)el.classList.add('disabled');if(wk)el.classList.add('weekend');if(td)el.classList.add('today');if(sel)el.classList.add('selected');
-    if(!wk&&!past)el.onclick=()=>selectDate(ds);
+function goToStep2() {
+  var n = document.getElementById('b-name').value.trim();
+  var e = document.getElementById('b-email').value.trim();
+  var p = document.getElementById('b-phone').value.trim();
+  var i = document.getElementById('b-interest').value;
+  if (!n || !e || !p || !i) { alert('Por favor completa todos los campos obligatorios.'); return; }
+  if (!/\S+@\S+\.\S+/.test(e)) { alert('Por favor ingresa un email válido.'); return; }
+  var now = new Date();
+  currentMonth = now.getMonth();
+  currentYear = now.getFullYear();
+  renderCalendar();
+  goToStep(2);
+}
+
+/* ── CALENDAR ── */
+function renderCalendar() {
+  document.getElementById('calMonthLabel').textContent = MONTHS_ES[currentMonth] + ' ' + currentYear;
+  var grid = document.getElementById('calGrid');
+  var dows = Array.from(grid.querySelectorAll('.cal-dow'));
+  grid.innerHTML = '';
+  dows.forEach(function(d) { grid.appendChild(d); });
+  var first = new Date(currentYear, currentMonth, 1);
+  var start = first.getDay() - 1; if (start < 0) start = 6;
+  var days = new Date(currentYear, currentMonth + 1, 0).getDate();
+  var today = new Date(); today.setHours(0, 0, 0, 0);
+  for (var i = 0; i < start; i++) {
+    var e = document.createElement('div'); e.className = 'cal-day disabled'; grid.appendChild(e);
+  }
+  for (var d = 1; d <= days; d++) {
+    var dt = new Date(currentYear, currentMonth, d);
+    var ds = dt.toISOString().split('T')[0];
+    var wk = dt.getDay() === 0 || dt.getDay() === 6;
+    var past = dt < today;
+    var el = document.createElement('div');
+    el.className = 'cal-day';
+    el.textContent = d;
+    if (wk || past) el.classList.add('disabled');
+    if (dt.getTime() === today.getTime()) el.classList.add('today');
+    if (ds === selectedDate) el.classList.add('selected');
+    if (!wk && !past) { (function(dateStr) { el.onclick = function() { selectDate(dateStr); }; })(ds); }
     grid.appendChild(el);
   }
 }
 
-function changeMonth(dir){
-  currentMonth+=dir;if(currentMonth>11){currentMonth=0;currentYear++;}if(currentMonth<0){currentMonth=11;currentYear--;}
-  const now=new Date();if(currentYear<now.getFullYear()||(currentYear===now.getFullYear()&&currentMonth<now.getMonth())){currentMonth=now.getMonth();currentYear=now.getFullYear();}
+function changeMonth(dir) {
+  currentMonth += dir;
+  if (currentMonth > 11) { currentMonth = 0; currentYear++; }
+  if (currentMonth < 0) { currentMonth = 11; currentYear--; }
+  var now = new Date();
+  if (currentYear < now.getFullYear() || (currentYear === now.getFullYear() && currentMonth < now.getMonth())) {
+    currentMonth = now.getMonth(); currentYear = now.getFullYear();
+  }
   renderCalendar();
 }
 
-async function selectDate(ds){
-  selectedDate=ds;selectedSlot=null;document.getElementById('btnConfirm').disabled=true;renderCalendar();
-  const dt=new Date(ds+'T12:00:00');
-  document.getElementById('slotsTitle').textContent=DAYS_ES[dt.getDay()]+' '+dt.getDate()+' de '+MONTHS_ES[dt.getMonth()];
-  const c=document.getElementById('slotsContainer');
-  c.innerHTML='<div style="text-align:center;padding:40px;color:var(--gray-500);"><div class="spinner-border spinner-border-sm text-primary"></div><p style="margin-top:8px;">Cargando horarios...</p></div>';
-  try{
-    let slots;if(slotsCache[ds])slots=slotsCache[ds];else{const r=await fetch(API_BASE+'/available-slots?date='+ds);const d=await r.json();slots=d.slots||[];slotsCache[ds]=slots;}
-    if(!slots.length){c.innerHTML='<p style="color:var(--brand-secondary);text-align:center;padding:30px;font-weight:600;">No hay horarios disponibles.<br><small style="font-weight:400;color:var(--gray-500);">Prueba con otra fecha.</small></p>';return;}
-    c.innerHTML='<div class="slots-grid">'+slots.map(s=>'<div class="slot" onclick="selectSlot(this,\''+s+'\')">'+s+'</div>').join('')+'</div>';
-  }catch(e){c.innerHTML='<p style="color:var(--brand-secondary);text-align:center;padding:30px;">Error al cargar horarios.</p>';}
+function selectDate(ds) {
+  selectedDate = ds; selectedSlot = null;
+  document.getElementById('btnConfirm').disabled = true;
+  renderCalendar();
+  var dt = new Date(ds + 'T12:00:00');
+  document.getElementById('slotsTitle').textContent = DAYS_ES[dt.getDay()] + ' ' + dt.getDate() + ' de ' + MONTHS_ES[dt.getMonth()];
+  var c = document.getElementById('slotsContainer');
+  c.innerHTML = '<div style="text-align:center;padding:40px;"><div class="spinner-border spinner-border-sm" style="color:var(--brand-primary);width:24px;height:24px;border-width:3px;" role="status"></div><p style="color:var(--gray-400);font-size:.85rem;margin-top:12px;" class="loading-dots">Cargando horarios</p></div>';
+
+  (slotsCache[ds] ? Promise.resolve(slotsCache[ds]) : fetch(API_BASE + '/available-slots?date=' + ds).then(function(r) { return r.json(); }).then(function(d) { slotsCache[ds] = d.slots || []; return slotsCache[ds]; }))
+  .then(function(slots) {
+    if (!slots || !slots.length) {
+      c.innerHTML = '<div style="text-align:center;padding:36px 10px;"><svg width="36" height="36" fill="none" stroke="#ef4444" stroke-width="1.5" viewBox="0 0 24 24" style="margin-bottom:8px;"><path d="M6 18L18 6M6 6l12 12"/></svg><p style="color:var(--brand-secondary);font-weight:700;font-size:.95rem;">Sin horarios disponibles</p><p style="color:var(--gray-400);font-size:.8rem;margin-top:2px;">Prueba con otra fecha</p></div>';
+      return;
+    }
+    var html = '<div class="slots-grid">';
+    slots.forEach(function(s) {
+      var h = parseInt(s.split(':')[0]);
+      var period = h < 12 ? 'AM' : 'PM';
+      html += '<div class="slot" onclick="selectSlot(this,\'' + s + '\')">' + s + '<span class="slot-period">' + period + '</span></div>';
+    });
+    html += '</div>';
+    c.innerHTML = html;
+  })
+  .catch(function() {
+    c.innerHTML = '<div style="text-align:center;padding:36px 10px;"><p style="color:var(--brand-secondary);font-weight:600;">Error al cargar horarios.</p><p style="color:var(--gray-400);font-size:.8rem;margin-top:4px;">Verifica tu conexión e intenta de nuevo.</p></div>';
+  });
 }
 
-function selectSlot(el,t){document.querySelectorAll('.slot').forEach(s=>s.classList.remove('selected'));el.classList.add('selected');selectedSlot=t;document.getElementById('btnConfirm').disabled=false;}
+function selectSlot(el, t) {
+  document.querySelectorAll('.slot').forEach(function(s) { s.classList.remove('selected'); });
+  el.classList.add('selected');
+  selectedSlot = t;
+  document.getElementById('btnConfirm').disabled = false;
+}
 
-async function submitBooking(){
-  if(!selectedDate||!selectedSlot)return;
-  const btn=document.getElementById('btnConfirm');btn.disabled=true;btn.textContent='Agendando...';
-  const nm=document.getElementById('b-name').value.trim(),em=document.getElementById('b-email').value.trim(),ph=document.getElementById('b-phone').value.trim(),int=document.getElementById('b-interest').value,msg=document.getElementById('b-message').value.trim(),utm=getUTM();
-  try{
-    const r=await fetch(API_BASE+'/create-consultation',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({studentName:nm,studentEmail:em,consultationDate:selectedDate,consultationTime:selectedSlot,phone:ph,interest:int,message:msg,...utm})});
-    const d=await r.json();if(!d.success)throw new Error(d.error||'Error');
+/* ── SUBMIT ── */
+function submitBooking() {
+  if (!selectedDate || !selectedSlot) return;
+  var btn = document.getElementById('btnConfirm');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="loading-dots">Agendando tu consulta</span>';
+  var nm = document.getElementById('b-name').value.trim();
+  var em = document.getElementById('b-email').value.trim();
+  var ph = document.getElementById('b-phone').value.trim();
+  var int = document.getElementById('b-interest').value;
+  var msg = document.getElementById('b-message').value.trim();
+  var utm = getUTM();
+
+  fetch(API_BASE + '/create-consultation', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ studentName: nm, studentEmail: em, consultationDate: selectedDate, consultationTime: selectedSlot, phone: ph, interest: int, message: msg, utm_source: utm.utm_source, utm_campaign: utm.utm_campaign, utm_medium: utm.utm_medium })
+  })
+  .then(function(r) { return r.json(); })
+  .then(function(d) {
+    if (!d.success) throw new Error(d.error || 'Error');
     // Google Ads conversion
-    if(typeof gtag==='function'){gtag('event','conversion',{send_to:'AW-18028243819/consultation_scheduled',value:1.0,currency:'CLP'});}
-    const dt=new Date(selectedDate+'T'+selectedSlot+':00');
-    document.getElementById('conf-name').textContent=nm;
-    document.getElementById('conf-date').textContent=DAYS_ES[dt.getDay()]+' '+dt.getDate()+' de '+MONTHS_ES[dt.getMonth()]+', '+dt.getFullYear();
-    document.getElementById('conf-time').textContent=selectedSlot+' hrs (Chile)';
-    document.getElementById('conf-interest').textContent=int;
-    const ml=d.meetLink||'https://meet.google.com',mb=document.getElementById('conf-meet-link');mb.href=ml;if(ml==='https://meet.google.com')mb.style.display='none';
+    if (typeof gtag === 'function') { gtag('event', 'conversion', { send_to: 'AW-18028243819/consultation_scheduled', value: 1.0, currency: 'CLP' }); }
+    var dt = new Date(selectedDate + 'T' + selectedSlot + ':00');
+    document.getElementById('conf-name').textContent = nm;
+    document.getElementById('conf-date').textContent = DAYS_ES[dt.getDay()] + ' ' + dt.getDate() + ' de ' + MONTHS_ES[dt.getMonth()] + ', ' + dt.getFullYear();
+    document.getElementById('conf-time').textContent = selectedSlot + ' hrs (Chile)';
+    document.getElementById('conf-interest').textContent = int;
+    var ml = d.meetLink || 'https://meet.google.com';
+    var mb = document.getElementById('conf-meet-link');
+    mb.href = ml;
+    if (ml === 'https://meet.google.com') mb.style.display = 'none';
     goToStep(3);
-  }catch(e){alert('Error al agendar: '+(e.message||'Intenta de nuevo'));btn.disabled=false;btn.textContent='Confirmar Consulta →';}
+  })
+  .catch(function(e) {
+    alert('Error al agendar: ' + (e.message || 'Intenta de nuevo'));
+    btn.disabled = false;
+    btn.textContent = 'Confirmar Consulta →';
+  });
 }
 </script>
 </body>
