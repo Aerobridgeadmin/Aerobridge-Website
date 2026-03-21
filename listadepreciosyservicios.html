@@ -378,5 +378,19 @@
 
 <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="assets/theme/js/animations.js"></script>
+
+<script>
+// WhatsApp conversion tracking
+document.addEventListener('click', function(e) {
+  var link = e.target.closest('a[href*="wa.me"]');
+  if (link && typeof gtag === 'function') {
+    gtag('event', 'conversion', {
+      send_to: 'AW-18028243819/whatsapp_click',
+      value: 0.5,
+      currency: 'CLP'
+    });
+  }
+});
+</script>
 </body>
 </html>
