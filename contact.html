@@ -99,57 +99,37 @@
   <div class="container">
     <div class="row g-5">
       
-      <!-- Contact Form -->
+      <!-- Book Consultation CTA -->
       <div class="col-lg-7">
         <div class="card">
-          <div class="card-body" style="padding: var(--spacing-xl);">
-            <h3 class="mb-4">Envíanos un Mensaje</h3>
-            <p class="text-muted mb-4">Completa el formulario y te responderemos en menos de 24 horas.</p>
-            
-            <form action="https://formsubmit.co/admin@aerobridge.cl" method="POST">
-                  <input type="hidden" name="_next" value="https://aerobridge.cl/contact">
-                  <input type="hidden" name="_subject" value="Nueva consulta desde AeroBridge">
-                  <input type="hidden" name="_captcha" value="false">
-              <div class="row g-3">
-                <div class="col-md-6">
-                  <label class="form-label" style="font-weight: var(--font-weight-semibold); color: var(--text-primary);">Nombre Completo *</label>
-                  <input type="text" name="nombre" required class="form-control" placeholder="Tu nombre">
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label" style="font-weight: var(--font-weight-semibold); color: var(--text-primary);">Email *</label>
-                  <input type="email" name="email" required class="form-control" placeholder="tu@email.com">
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label" style="font-weight: var(--font-weight-semibold); color: var(--text-primary);">Teléfono (WhatsApp)</label>
-                  <input type="tel" name="telefono" class="form-control" placeholder="+56 9 1234 5678">
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label" style="font-weight: var(--font-weight-semibold); color: var(--text-primary);">¿Qué te interesa? *</label>
-                  <select name="interes" required class="form-control">
-                    <option value="">Selecciona una opción</option>
-                    <option value="faa">Certificación FAA</option>
-                    <option value="icao">Certificación ICAO</option>
-                    <option value="escuela">Escuela de Vuelo Internacional</option>
-                    <option value="ingles">Inglés Aeronáutico</option>
-                    <option value="orientacion">Orientación de Carrera</option>
-                    <option value="institucional">Consultoría Institucional</option>
-                    <option value="otro">Otro</option>
-                  </select>
-                </div>
-                <div class="col-12">
-                  <label class="form-label" style="font-weight: var(--font-weight-semibold); color: var(--text-primary);">Tu Mensaje *</label>
-                  <textarea name="mensaje" rows="5" required class="form-control" placeholder="Cuéntanos sobre tus objetivos en aviación, tu experiencia actual y cómo podemos ayudarte..."></textarea>
-                </div>
-                <div class="col-12">
-                  <button type="submit" class="btn btn-secondary btn-lg btn-pill w-100">
-                    Enviar Mensaje
-                  </button>
-                  <p class="text-center mt-3 mb-0" style="font-size: var(--font-size-small); color: var(--text-secondary);">
-                    ✅ Respuesta garantizada en menos de 24 horas
-                  </p>
-                </div>
+          <div class="card-body" style="padding: var(--spacing-xl); text-align:center;">
+            <div style="width:64px;height:64px;background:linear-gradient(135deg,var(--brand-primary),#1046a0);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;margin-bottom:20px;">
+              <svg width="28" height="28" fill="white" viewBox="0 0 16 16"><path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>
+            </div>
+            <h3 style="font-size:1.5rem;font-weight:800;margin-bottom:8px;">Agenda Tu Consulta Gratuita</h3>
+            <p style="color:var(--text-secondary);font-size:1rem;max-width:400px;margin:0 auto 10px;">
+              Elige tu fecha y hora, conéctate por Google Meet y recibe orientación personalizada.
+            </p>
+            <div style="display:flex;justify-content:center;gap:24px;margin:20px 0;flex-wrap:wrap;">
+              <div style="display:flex;align-items:center;gap:8px;font-size:0.85rem;color:var(--text-secondary);font-weight:600;">
+                <svg width="18" height="18" fill="var(--brand-primary)" viewBox="0 0 16 16"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z"/></svg>
+                15 minutos
               </div>
-            </form>
+              <div style="display:flex;align-items:center;gap:8px;font-size:0.85rem;color:var(--text-secondary);font-weight:600;">
+                <svg width="18" height="18" fill="var(--brand-primary)" viewBox="0 0 16 16"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z"/></svg>
+                100% gratis
+              </div>
+              <div style="display:flex;align-items:center;gap:8px;font-size:0.85rem;color:var(--text-secondary);font-weight:600;">
+                <svg width="18" height="18" fill="var(--brand-primary)" viewBox="0 0 16 16"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z"/></svg>
+                Google Meet
+              </div>
+            </div>
+            <a href="/consulta-gratis" class="btn btn-secondary btn-lg btn-pill" style="padding:16px 48px;font-size:1.1rem;font-weight:800;">
+              Agendar Ahora →
+            </a>
+            <p style="color:var(--text-secondary);font-size:0.78rem;margin-top:14px;">
+              Elige tu horario en tiempo real · Sin compromiso
+            </p>
           </div>
         </div>
       </div>

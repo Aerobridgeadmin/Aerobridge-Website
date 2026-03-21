@@ -665,45 +665,23 @@
           </div>
           
           <div class="row justify-content-center">
-            <div class="col-lg-8">
-              <div class="cta-form">
-                <form action="https://formsubmit.co/admin@aerobridge.cl" method="POST">
-                  <input type="hidden" name="_next" value="https://aerobridge.cl">
-                  <input type="hidden" name="_subject" value="Nueva consulta desde AeroBridge">
-                  <input type="hidden" name="_captcha" value="false">
-                  <div class="row g-3">
-                    <div class="col-md-6">
-                      <input type="text" name="nombre" placeholder="Nombre Completo" required class="form-control">
-                    </div>
-                    <div class="col-md-6">
-                      <input type="email" name="email" placeholder="Email" required class="form-control">
-                    </div>
-                    <div class="col-md-6">
-                      <input type="tel" name="telefono" placeholder="Teléfono (WhatsApp)" class="form-control">
-                    </div>
-                    <div class="col-md-6">
-                      <select name="interes" required class="form-control">
-                        <option value="">¿Qué te interesa?</option>
-                        <option value="faa">Certificación FAA</option>
-                        <option value="icao">Certificación ICAO</option>
-                        <option value="escuela">Escuela de Vuelo</option>
-                        <option value="ingles">Inglés Aeronáutico</option>
-                        <option value="otro">Otro</option>
-                      </select>
-                    </div>
-                    <div class="col-12">
-                      <textarea name="mensaje" rows="4" placeholder="Cuéntanos sobre tus objetivos en aviación..." class="form-control"></textarea>
-                    </div>
-                    <div class="col-12 text-center">
-                      <button type="submit" class="btn btn-secondary btn-lg btn-pill">
-                        Solicitar Consulta Gratuita
-                      </button>
-                      <p class="mt-3 mb-0" style="font-size: var(--font-size-small); color: var(--text-secondary);">
-                        Respuesta en menos de 24 horas • Sin compromiso
-                      </p>
-                    </div>
-                  </div>
-                </form>
+            <div class="col-lg-8 text-center">
+              <div style="background:rgba(255,255,255,0.08);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.15);border-radius:20px;padding:40px 32px;">
+                <div style="width:72px;height:72px;background:rgba(255,255,255,0.12);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;margin-bottom:20px;">
+                  <svg width="32" height="32" fill="white" viewBox="0 0 16 16"><path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>
+                </div>
+                <h3 style="color:white;font-size:1.6rem;font-weight:800;margin-bottom:8px;">15 minutos que pueden cambiar tu carrera</h3>
+                <p style="color:rgba(255,255,255,0.8);font-size:1rem;max-width:440px;margin:0 auto 24px;">
+                  Elige tu horario, conéctate por Google Meet y recibe un plan de acción personalizado. Sin costo, sin compromiso.
+                </p>
+                <a href="/consulta-gratis" style="display:inline-block;background:white;color:var(--brand-primary);font-weight:800;font-size:1.15rem;padding:18px 48px;border-radius:60px;text-decoration:none;transition:all 0.3s;box-shadow:0 6px 24px rgba(0,0,0,0.2);"
+                   onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 12px 36px rgba(0,0,0,0.3)'"
+                   onmouseout="this.style.transform='';this.style.boxShadow='0 6px 24px rgba(0,0,0,0.2)'">
+                  Agendar Mi Consulta Gratis →
+                </a>
+                <p style="color:rgba(255,255,255,0.5);font-size:0.8rem;margin-top:14px;">
+                  ⚡ Horarios disponibles en tiempo real · Google Meet incluido
+                </p>
               </div>
             </div>
           </div>
