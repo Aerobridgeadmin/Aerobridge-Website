@@ -13,605 +13,262 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#0B3D91">
-  
-  <!-- Favicon -->
   <link rel="shortcut icon" href="assets/images/aerobridge-logo-1.jpg" type="image/x-icon">
   <link rel="apple-touch-icon" href="assets/images/aerobridge-logo-1.jpg">
-  
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Solicita tu consulta gratuita con AeroBridge Consulting. Descubre cómo obtener certificaciones FAA, ICAO y acceder a escuelas de vuelo internacionales.">
-  <meta name="keywords" content="consulta gratuita aviación, certificación FAA chile, ICAO chile, escuela de vuelo, piloto comercial">
+  <meta name="description" content="Agenda tu consulta gratuita de 15 minutos con AeroBridge. Elige tu horario y conéctate por Google Meet directamente.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://aerobridge.cl/consulta-gratis">
-  
-  <title>Consulta Gratuita - AeroBridge Consulting Chile</title>
-  
-  <!-- Fonts -->
+  <title>Agenda Tu Consulta Gratuita - AeroBridge Consulting Chile</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
-  <!-- Styles -->
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/theme/css/design-system.css">
   <link rel="stylesheet" href="assets/theme/css/animations.css">
-
   <style>
-    .lead-hero {
-      background: linear-gradient(135deg, #0B3D91 0%, #083169 40%, #061d3f 100%);
-      padding: 100px 0 60px;
-      position: relative;
-      overflow: hidden;
-    }
-    .lead-hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 30% 50%, rgba(135,206,235,0.08) 0%, transparent 60%),
-                  radial-gradient(circle at 80% 20%, rgba(135,206,235,0.05) 0%, transparent 50%);
-    }
-    .lead-hero * { position: relative; z-index: 1; }
-
-    .lead-badge {
-      display: inline-block;
-      background: rgba(135,206,235,0.15);
-      border: 1px solid rgba(135,206,235,0.3);
-      color: #87CEEB;
-      padding: 6px 18px;
-      border-radius: 50px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      margin-bottom: 20px;
-    }
-
-    .lead-hero h1 {
-      color: white;
-      font-size: 2.6rem;
-      font-weight: 800;
-      line-height: 1.15;
-      margin-bottom: 20px;
-    }
-    .lead-hero h1 span { color: #87CEEB; }
-    .lead-hero .lead-sub {
-      color: rgba(255,255,255,0.8);
-      font-size: 1.15rem;
-      line-height: 1.7;
-      max-width: 520px;
-    }
-
-    .trust-points {
-      margin-top: 35px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-    .trust-point {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: rgba(255,255,255,0.85);
-      font-size: 0.95rem;
-    }
-    .trust-point svg {
-      flex-shrink: 0;
-      color: #87CEEB;
-    }
-
-    .lead-form-card {
-      background: white;
-      border-radius: 16px;
-      padding: 40px 35px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.15), 0 0 0 1px rgba(255,255,255,0.1);
-    }
-    .lead-form-card h3 {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--brand-primary);
-      margin-bottom: 6px;
-    }
-    .lead-form-card .form-sub {
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-      margin-bottom: 24px;
-    }
-    .lead-form-card .form-control,
-    .lead-form-card .form-select {
-      border: 1.5px solid var(--gray-200);
-      border-radius: 10px;
-      padding: 12px 16px;
-      font-size: 0.95rem;
-      transition: border-color 0.2s;
-    }
-    .lead-form-card .form-control:focus,
-    .lead-form-card .form-select:focus {
-      border-color: var(--brand-primary);
-      box-shadow: 0 0 0 3px rgba(11,61,145,0.1);
-    }
-    .lead-form-card label {
-      font-weight: 600;
-      font-size: 0.85rem;
-      color: var(--text-primary);
-      margin-bottom: 5px;
-    }
-
-    .btn-lead {
-      background: var(--brand-primary);
-      color: white;
-      border: none;
-      border-radius: 50px;
-      padding: 14px 32px;
-      font-size: 1.05rem;
-      font-weight: 700;
-      width: 100%;
-      cursor: pointer;
-      transition: background 0.25s, transform 0.15s;
-    }
-    .btn-lead:hover {
-      background: var(--brand-primary-dark);
-      transform: translateY(-1px);
-    }
-
-    .form-guarantee {
-      text-align: center;
-      margin-top: 14px;
-      font-size: 0.8rem;
-      color: var(--text-secondary);
-    }
-    .form-guarantee svg {
-      vertical-align: -2px;
-      margin-right: 4px;
-    }
-
-    /* Benefits section */
-    .benefits-section {
-      padding: 80px 0;
-      background: var(--gray-50);
-    }
-    .benefits-section h2 {
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--text-primary);
-      text-align: center;
-      margin-bottom: 12px;
-    }
-    .benefits-section .section-sub {
-      text-align: center;
-      color: var(--text-secondary);
-      font-size: 1.05rem;
-      max-width: 600px;
-      margin: 0 auto 50px;
-    }
-    .benefit-card {
-      background: white;
-      border-radius: 14px;
-      padding: 30px 25px;
-      border: 1px solid var(--gray-200);
-      height: 100%;
-      transition: border-color 0.25s, box-shadow 0.25s;
-    }
-    .benefit-card:hover {
-      border-color: var(--brand-primary);
-      box-shadow: 0 8px 30px rgba(11,61,145,0.08);
-    }
-    .benefit-icon {
-      width: 50px;
-      height: 50px;
-      background: rgba(11,61,145,0.08);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 18px;
-      color: var(--brand-primary);
-    }
-    .benefit-card h4 {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--text-primary);
-      margin-bottom: 8px;
-    }
-    .benefit-card p {
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-      line-height: 1.6;
-      margin: 0;
-    }
-
-    /* Pricing preview */
-    .pricing-preview {
-      padding: 80px 0;
-      background: white;
-    }
-    .pricing-preview h2 {
-      font-size: 2rem;
-      font-weight: 800;
-      text-align: center;
-      margin-bottom: 12px;
-    }
-    .pricing-preview .section-sub {
-      text-align: center;
-      color: var(--text-secondary);
-      max-width: 600px;
-      margin: 0 auto 50px;
-      font-size: 1.05rem;
-    }
-    .price-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 18px 24px;
-      border: 1px solid var(--gray-200);
-      border-radius: 12px;
-      margin-bottom: 12px;
-      transition: border-color 0.2s;
-    }
-    .price-item:hover { border-color: var(--brand-primary); }
-    .price-item .price-name {
-      font-weight: 600;
-      color: var(--text-primary);
-    }
-    .price-item .price-desc {
-      font-size: 0.85rem;
-      color: var(--text-secondary);
-    }
-    .price-item .price-amount {
-      font-weight: 800;
-      color: var(--brand-primary);
-      font-size: 1.1rem;
-      white-space: nowrap;
-    }
-
-    .cta-bottom {
-      background: linear-gradient(135deg, #0B3D91 0%, #083169 100%);
-      padding: 60px 0;
-      text-align: center;
-    }
-    .cta-bottom h2 {
-      color: white;
-      font-size: 1.8rem;
-      font-weight: 800;
-      margin-bottom: 12px;
-    }
-    .cta-bottom p {
-      color: rgba(255,255,255,0.8);
-      font-size: 1.05rem;
-      margin-bottom: 24px;
-    }
-    .btn-cta-white {
-      background: white;
-      color: var(--brand-primary);
-      border: none;
-      border-radius: 50px;
-      padding: 14px 36px;
-      font-size: 1.05rem;
-      font-weight: 700;
-      text-decoration: none;
-      display: inline-block;
-      transition: transform 0.15s, box-shadow 0.2s;
-    }
-    .btn-cta-white:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-      color: var(--brand-primary);
-    }
-
-    @media (max-width: 991px) {
-      .lead-hero { padding: 90px 0 50px; }
-      .lead-hero h1 { font-size: 2rem; }
-      .lead-form-card { margin-top: 40px; padding: 30px 24px; }
-    }
+    .booking-hero{background:linear-gradient(135deg,#0B3D91 0%,#083169 40%,#061d3f 100%);padding:100px 0 40px;position:relative;overflow:hidden}
+    .booking-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 50%,rgba(135,206,235,.08) 0%,transparent 60%),radial-gradient(circle at 80% 20%,rgba(135,206,235,.05) 0%,transparent 50%)}
+    .booking-hero *{position:relative;z-index:1}
+    .booking-hero h1{color:#fff;font-size:2.4rem;font-weight:800;line-height:1.15;margin-bottom:12px}
+    .booking-hero h1 span{color:#87CEEB}
+    .booking-hero p{color:rgba(255,255,255,.8);font-size:1.1rem}
+    .booking-container{max-width:780px;margin:-40px auto 60px;padding:0 16px;position:relative;z-index:2}
+    .steps{display:flex;gap:0;margin-bottom:32px}
+    .step-item{flex:1;text-align:center;position:relative}
+    .step-num{width:36px;height:36px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:.9rem;margin-bottom:6px;transition:.3s;background:var(--gray-200);color:var(--gray-500)}
+    .step-item.active .step-num{background:var(--brand-primary);color:#fff;box-shadow:0 4px 12px rgba(11,61,145,.3)}
+    .step-item.completed .step-num{background:#28a745;color:#fff}
+    .step-label{font-size:.75rem;font-weight:600;color:var(--gray-500);display:block}
+    .step-item.active .step-label{color:var(--brand-primary)}
+    .step-item.completed .step-label{color:#28a745}
+    .step-line{position:absolute;top:18px;left:50%;right:-50%;height:2px;background:var(--gray-200);z-index:-1}
+    .step-item.completed .step-line{background:#28a745}
+    .step-item:last-child .step-line{display:none}
+    .booking-card{background:#fff;border-radius:16px;padding:36px;box-shadow:0 8px 40px rgba(0,0,0,.08);border:1px solid rgba(0,0,0,.06)}
+    .form-label{font-weight:600;font-size:.85rem;color:var(--text-primary);margin-bottom:5px}
+    .form-control,.form-select{border:1.5px solid var(--gray-200);border-radius:10px;padding:12px 16px;font-size:.95rem;transition:border-color .2s}
+    .form-control:focus,.form-select:focus{border-color:var(--brand-primary);box-shadow:0 0 0 3px rgba(11,61,145,.1)}
+    .cal-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+    .cal-header h4{font-size:1.1rem;font-weight:700;color:var(--text-primary);margin:0}
+    .cal-nav{background:none;border:1px solid var(--gray-200);border-radius:8px;width:36px;height:36px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;font-size:1.1rem;transition:.2s;color:var(--gray-600)}
+    .cal-nav:hover{background:var(--gray-100);border-color:var(--brand-primary);color:var(--brand-primary)}
+    .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;text-align:center}
+    .cal-dow{font-size:.7rem;font-weight:700;color:var(--gray-500);text-transform:uppercase;padding:4px 0}
+    .cal-day{aspect-ratio:1;display:flex;align-items:center;justify-content:center;border-radius:10px;font-size:.9rem;font-weight:500;cursor:pointer;transition:.2s;border:2px solid transparent}
+    .cal-day:hover:not(.disabled):not(.selected){background:rgba(11,61,145,.06);border-color:rgba(11,61,145,.2)}
+    .cal-day.disabled{color:var(--gray-300);cursor:default}
+    .cal-day.today{font-weight:700;color:var(--brand-primary)}
+    .cal-day.selected{background:var(--brand-primary);color:#fff;border-color:var(--brand-primary);font-weight:700;box-shadow:0 4px 10px rgba(11,61,145,.25)}
+    .cal-day.weekend{color:var(--gray-400)}
+    .slots-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+    @media(max-width:600px){.slots-grid{grid-template-columns:repeat(3,1fr)}}
+    .slot{padding:12px 8px;border:2px solid var(--gray-200);border-radius:10px;text-align:center;cursor:pointer;font-weight:600;font-size:.95rem;transition:.2s;background:#fff}
+    .slot:hover{border-color:var(--brand-primary);background:rgba(11,61,145,.04)}
+    .slot.selected{border-color:var(--brand-primary);background:var(--brand-primary);color:#fff;box-shadow:0 4px 10px rgba(11,61,145,.25)}
+    .btn-booking{background:var(--brand-primary);color:#fff;border:none;border-radius:50px;padding:14px 32px;font-size:1.05rem;font-weight:700;width:100%;cursor:pointer;transition:.25s}
+    .btn-booking:hover{background:var(--brand-primary-dark);transform:translateY(-1px);box-shadow:0 6px 20px rgba(11,61,145,.3)}
+    .btn-booking:disabled{opacity:.5;cursor:not-allowed;transform:none;box-shadow:none}
+    .btn-back{background:none;border:1px solid var(--gray-200);border-radius:50px;padding:12px 24px;font-size:.95rem;font-weight:600;cursor:pointer;color:var(--gray-600);transition:.2s}
+    .btn-back:hover{border-color:var(--gray-400);background:var(--gray-50)}
+    .confirm-card{background:linear-gradient(135deg,#f0fdf4,#ecfdf5);border:2px solid #bbf7d0;border-radius:14px;padding:32px;text-align:center}
+    .confirm-card .check{width:64px;height:64px;background:#22c55e;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;margin-bottom:16px}
+    .confirm-card h3{font-size:1.5rem;font-weight:800;color:#166534;margin-bottom:8px}
+    .confirm-card p{color:#15803d;font-size:1rem}
+    .meet-btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#1d4ed8,#2563eb);color:#fff;padding:14px 32px;border-radius:12px;font-weight:700;font-size:1.05rem;text-decoration:none;transition:.25s;box-shadow:0 4px 14px rgba(29,78,216,.35);margin-top:16px}
+    .meet-btn:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(29,78,216,.45);color:#fff}
+    .trust-strip{background:var(--gray-50);border:1px solid var(--gray-200);border-radius:12px;padding:20px;margin-top:24px;display:flex;justify-content:center;gap:32px;flex-wrap:wrap}
+    .trust-item{display:flex;align-items:center;gap:8px;font-size:.85rem;font-weight:600;color:var(--gray-600)}
+    .trust-item svg{color:var(--brand-primary);flex-shrink:0}
+    .fade-in{animation:fadeIn .3s ease-in-out}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
   </style>
 </head>
 <body>
 
-<!-- WhatsApp Floating Button -->
-<a href="https://wa.me/56973980874?text=Hola!%20Me%20gustaría%20obtener%20más%20información%20sobre%20Aerobridge%20Consulting" 
-   class="whatsapp-float" 
-   target="_blank" 
-   rel="noopener noreferrer"
-   aria-label="Contactar por WhatsApp">
-  <svg width="28" height="28" fill="currentColor" viewBox="0 0 16 16">
-    <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
-  </svg>
+<a href="https://wa.me/56973980874?text=Hola!%20Me%20gustaría%20obtener%20más%20información%20sobre%20Aerobridge%20Consulting" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+  <svg width="28" height="28" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg>
 </a>
 
-<!-- Navbar -->
 <nav class="navbar navbar-expand-lg">
   <div class="container">
-    <a class='navbar-brand' href='/'>
-      <img src="assets/images/aerobridge-logo.png" alt="AeroBridge Logo">
-      <span class="navbar-caption d-none d-md-inline">AEROBRIDGE CONSULTING</span>
-    </a>
-    
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <div class="hamburger">
-        <span></span><span></span><span></span><span></span>
-      </div>
-    </button>
-    
+    <a class='navbar-brand' href='/'><img src="assets/images/aerobridge-logo.png" alt="AeroBridge Logo"><span class="navbar-caption d-none d-md-inline">AEROBRIDGE CONSULTING</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><div class="hamburger"><span></span><span></span><span></span><span></span></div></button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class='nav-link' href='/'>Inicio</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Empresa</a>
-          <ul class="dropdown-menu">
-            <li><a class='dropdown-item' href='/sobrenosotros'>Sobre Nosotros</a></li>
-            <li><a class='dropdown-item' href='/contacto'>Historia</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Servicios</a>
-          <ul class="dropdown-menu">
-            <li><a class='dropdown-item' href='/servicios'>Nuestros Servicios</a></li>
-            <li><a class="dropdown-item" href="/preparacion-examenes">Preparación de Exámenes</a></li>
-            <li><a class='dropdown-item' href='/listadepreciosyservicios'>Precios</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/como-empezar">Cómo Empezar</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Soporte</a>
-          <ul class="dropdown-menu">
-            <li><a class='dropdown-item' href='/faq'>Preguntas Frecuentes</a></li>
-            <li><a class='dropdown-item' href='/contact'>Contacto</a></li>
-          </ul>
-        </li>
-        <li class="nav-item ms-lg-3">
-          <a class="btn btn-primary btn-pill" href="https://dashboard.aerobridge.cl/login" target="_blank">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style="margin-right:6px; vertical-align:-2px;">
-              <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
-            </svg>
-            Dashboard Login
-          </a>
-        </li>
+        <li class="nav-item"><a class='nav-link' href='/'>Inicio</a></li>
+        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Empresa</a><ul class="dropdown-menu"><li><a class='dropdown-item' href='/sobrenosotros'>Sobre Nosotros</a></li><li><a class='dropdown-item' href='/contacto'>Historia</a></li></ul></li>
+        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Servicios</a><ul class="dropdown-menu"><li><a class='dropdown-item' href='/servicios'>Nuestros Servicios</a></li><li><a class="dropdown-item" href="/preparacion-examenes">Preparación de Exámenes</a></li><li><a class='dropdown-item' href='/listadepreciosyservicios'>Precios</a></li></ul></li>
+        <li class="nav-item"><a class="nav-link" href="/como-empezar">Cómo Empezar</a></li>
+        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Soporte</a><ul class="dropdown-menu"><li><a class='dropdown-item' href='/faq'>Preguntas Frecuentes</a></li><li><a class='dropdown-item' href='/contact'>Contacto</a></li></ul></li>
+        <li class="nav-item ms-lg-3"><a class="btn btn-primary btn-pill" href="https://dashboard.aerobridge.cl/login" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style="margin-right:6px;vertical-align:-2px;"><path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/></svg>Dashboard Login</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
-<!-- Hero + Form -->
-<section class="lead-hero">
-  <div class="container">
-    <div class="row align-items-center g-5">
-      <div class="col-lg-6">
-        <div class="lead-badge">CONSULTA 100% GRATUITA</div>
-        <h1>Tu Carrera en Aviación <span>Comienza con una Conversación</span></h1>
-        <p class="lead-sub">
-          Agenda una sesión personalizada con Sebastian Steele, graduado en Aviation & Aerospace de MSU Denver. Evaluaremos tu perfil, tus metas y te daremos un plan de acción claro.
-        </p>
-
-        <div class="trust-points">
-          <div class="trust-point">
-            <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/></svg>
-            Sin compromiso — conoce tus opciones primero
-          </div>
-          <div class="trust-point">
-            <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/></svg>
-            Instructor con experiencia directa en operaciones FAA
-          </div>
-          <div class="trust-point">
-            <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/></svg>
-            Precios significativamente menores que el mercado
-          </div>
-          <div class="trust-point">
-            <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/></svg>
-            Hablante nativo de inglés, bilingüe español
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-6">
-        <div class="lead-form-card">
-          <h3>Agenda Tu Consulta Gratuita</h3>
-          <p class="form-sub">Completa el formulario y te contactaremos dentro de 24 horas.</p>
-          
-          <form action="https://formsubmit.co/admin@aerobridge.cl" method="POST">
-            <input type="hidden" name="_next" value="https://aerobridge.cl">
-            <input type="hidden" name="_subject" value="Nueva Lead — Consulta Gratuita AeroBridge">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_template" value="table">
-            
-            <div class="row g-3">
-              <div class="col-12">
-                <label for="nombre">Nombre Completo *</label>
-                <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Tu nombre y apellido" required>
-              </div>
-              <div class="col-md-6">
-                <label for="email">Email *</label>
-                <input type="email" id="email" name="email" class="form-control" placeholder="tu@email.com" required>
-              </div>
-              <div class="col-md-6">
-                <label for="telefono">WhatsApp *</label>
-                <input type="tel" id="telefono" name="telefono" class="form-control" placeholder="+56 9 XXXX XXXX" required>
-              </div>
-              <div class="col-12">
-                <label for="interes">¿Qué te interesa? *</label>
-                <select id="interes" name="interes" class="form-select" required>
-                  <option value="">Selecciona una opción</option>
-                  <option value="Inglés General">Clases de Inglés General</option>
-                  <option value="FAA PPL">Preparación FAA — Piloto Privado</option>
-                  <option value="FAA IFR/CPL">Preparación FAA — Instrument/Comercial</option>
-                  <option value="FAA ATP">Preparación FAA — ATP</option>
-                  <option value="ICAO English">Inglés Aeronáutico (ICAO)</option>
-                  <option value="Asesoria Escuelas">Asesoría Escuelas de Vuelo</option>
-                  <option value="Paquete Combinado">Paquete Combinado (Descuento)</option>
-                  <option value="Otro">Otro / No estoy seguro</option>
-                </select>
-              </div>
-              <div class="col-12">
-                <label for="mensaje">Cuéntanos sobre tus metas (opcional)</label>
-                <textarea id="mensaje" name="mensaje" class="form-control" rows="3" placeholder="Ej: Quiero obtener mi PPL en Estados Unidos, necesito mejorar mi inglés primero..."></textarea>
-              </div>
-              <div class="col-12">
-                <button type="submit" class="btn-lead">
-                  Solicitar Consulta Gratuita →
-                </button>
-              </div>
-            </div>
-          </form>
-
-          <p class="form-guarantee">
-            <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M5.338 1.59a61.44 61.44 0 0 0-2.837.856.481.481 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.725 10.725 0 0 0 2.287 2.233c.346.244.652.42.893.533.12.057.218.095.293.118a.55.55 0 0 0 .101.025.615.615 0 0 0 .1-.025c.076-.023.174-.061.294-.118.24-.113.547-.29.893-.533a10.726 10.726 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.775 11.775 0 0 1-2.517 2.453 7.159 7.159 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7.158 7.158 0 0 1-1.048-.625 11.777 11.777 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 62.456 62.456 0 0 1 5.072.56z"/><path d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/></svg>
-            Tu información es 100% confidencial. No spam.
-          </p>
-        </div>
-      </div>
-    </div>
+<section class="booking-hero">
+  <div class="container text-center">
+    <h1>Agenda Tu Consulta <span>Gratuita de 15 Min</span></h1>
+    <p>Elige tu horario y conéctate directamente por Google Meet con Sebastian Steele</p>
   </div>
 </section>
 
-<!-- Benefits Section -->
-<section class="benefits-section">
-  <div class="container">
-    <h2>¿Por Qué Elegir AeroBridge?</h2>
-    <p class="section-sub">Lo que nos diferencia de otras opciones en el mercado chileno e internacional.</p>
+<div class="booking-container">
+  <div class="steps">
+    <div class="step-item active" id="step-ind-1"><div class="step-line"></div><span class="step-num">1</span><span class="step-label">Tus Datos</span></div>
+    <div class="step-item" id="step-ind-2"><div class="step-line"></div><span class="step-num">2</span><span class="step-label">Fecha y Hora</span></div>
+    <div class="step-item" id="step-ind-3"><span class="step-num">3</span><span class="step-label">Confirmación</span></div>
+  </div>
 
+  <!-- STEP 1 -->
+  <div class="booking-card fade-in" id="step1">
+    <h3 style="font-size:1.3rem;font-weight:700;margin-bottom:4px;">Cuéntanos sobre ti</h3>
+    <p style="color:var(--text-secondary);font-size:.9rem;margin-bottom:24px;">Completa tus datos para personalizar la consulta.</p>
+    <div class="row g-3">
+      <div class="col-12"><label class="form-label" for="b-name">Nombre Completo *</label><input type="text" id="b-name" class="form-control" placeholder="Tu nombre y apellido" required></div>
+      <div class="col-md-6"><label class="form-label" for="b-email">Email *</label><input type="email" id="b-email" class="form-control" placeholder="tu@email.com" required></div>
+      <div class="col-md-6"><label class="form-label" for="b-phone">WhatsApp *</label><input type="tel" id="b-phone" class="form-control" placeholder="+56 9 XXXX XXXX" required></div>
+      <div class="col-12"><label class="form-label" for="b-interest">¿Qué te interesa? *</label><select id="b-interest" class="form-select" required><option value="">Selecciona una opción</option><option value="Inglés General">Clases de Inglés General</option><option value="FAA PPL">Preparación FAA — Piloto Privado</option><option value="FAA IFR/CPL">Preparación FAA — Instrument/Comercial</option><option value="FAA ATP">Preparación FAA — ATP</option><option value="ICAO English">Inglés Aeronáutico (ICAO)</option><option value="Asesoria Escuelas">Asesoría Escuelas de Vuelo</option><option value="Paquete Combinado">Paquete Combinado (Descuento)</option><option value="Otro">Otro / No estoy seguro</option></select></div>
+      <div class="col-12"><label class="form-label" for="b-message">Cuéntanos sobre tus metas (opcional)</label><textarea id="b-message" class="form-control" rows="3" placeholder="Ej: Quiero obtener mi PPL en Estados Unidos, necesito mejorar mi inglés primero..."></textarea></div>
+      <div class="col-12" style="margin-top:8px;"><button class="btn-booking" onclick="goToStep2()">Elegir Fecha y Hora →</button></div>
+    </div>
+  </div>
+
+  <!-- STEP 2 -->
+  <div class="booking-card fade-in" id="step2" style="display:none;">
     <div class="row g-4">
-      <div class="col-md-6 col-lg-3">
-        <div class="benefit-card">
-          <div class="benefit-icon">
-            <svg width="24" height="24" fill="currentColor" viewBox="0 0 16 16"><path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/></svg>
-          </div>
-          <h4>Experiencia Real FAA</h4>
-          <p>Grado en Aviation & Aerospace de MSU Denver. Experiencia directa en operaciones de Frontier Airlines y charters internacionales.</p>
-        </div>
+      <div class="col-lg-7">
+        <h4 style="font-size:1.1rem;font-weight:700;margin-bottom:16px;">Elige una fecha</h4>
+        <div class="cal-header"><button class="cal-nav" onclick="changeMonth(-1)">&#8592;</button><h4 id="calMonthLabel"></h4><button class="cal-nav" onclick="changeMonth(1)">&#8594;</button></div>
+        <div class="cal-grid" id="calGrid"><div class="cal-dow">Lun</div><div class="cal-dow">Mar</div><div class="cal-dow">Mié</div><div class="cal-dow">Jue</div><div class="cal-dow">Vie</div><div class="cal-dow">Sáb</div><div class="cal-dow">Dom</div></div>
       </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="benefit-card">
-          <div class="benefit-icon">
-            <svg width="24" height="24" fill="currentColor" viewBox="0 0 16 16"><path d="M11 5.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1z"/><path d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2zm13 2v5H1V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1zm-1 9H2a1 1 0 0 1-1-1v-1h14v1a1 1 0 0 1-1 1z"/></svg>
-          </div>
-          <h4>Precios Competitivos</h4>
-          <p>Hasta un 60% menos que cursos internacionales equivalentes y significativamente menor que academias chilenas establecidas.</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="benefit-card">
-          <div class="benefit-icon">
-            <svg width="24" height="24" fill="currentColor" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/><path d="M4.285 9.567a.5.5 0 0 1 .683.183A3.498 3.498 0 0 0 8 11.5a3.498 3.498 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.498 4.498 0 0 1 8 12.5a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683zM7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5zm4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5z"/></svg>
-          </div>
-          <h4>100% Personalizado</h4>
-          <p>Clases individuales adaptadas a tu nivel y objetivos. No grupos masivos — atención personal directa.</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="benefit-card">
-          <div class="benefit-icon">
-            <svg width="24" height="24" fill="currentColor" viewBox="0 0 16 16"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855A7.97 7.97 0 0 0 5.145 4H7.5V1.077zM4.09 4a9.267 9.267 0 0 1 .64-1.539 6.7 6.7 0 0 1 .597-.933A7.025 7.025 0 0 0 2.255 4H4.09zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a6.958 6.958 0 0 0-.656 2.5h2.49zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5H4.847zM8.5 5v2.5h2.99a12.495 12.495 0 0 0-.337-2.5H8.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5H4.51zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5H8.5zM5.145 12c.138.386.295.744.468 1.068.552 1.035 1.218 1.65 1.887 1.855V12H5.145zm.182 2.472a6.696 6.696 0 0 1-.597-.933A9.268 9.268 0 0 1 4.09 12H2.255a7.024 7.024 0 0 0 3.072 2.472zM3.82 11a13.652 13.652 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5H3.82zm6.853 3.472A7.024 7.024 0 0 0 13.745 12H11.91a9.27 9.27 0 0 1-.64 1.539 6.688 6.688 0 0 1-.597.933zM8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855.173-.324.33-.682.468-1.068H8.5zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.65 13.65 0 0 1-.312 2.5zm2.802-3.5a6.959 6.959 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5h2.49zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7.024 7.024 0 0 0-3.072-2.472c.218.284.418.598.597.933zM10.855 4a7.966 7.966 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4h2.355z"/></svg>
-          </div>
-          <h4>Hablante Nativo</h4>
-          <p>Instructor nativo de inglés y bilingüe en español. No solo aprenderás teoría — desarrollarás comunicación real.</p>
-        </div>
+      <div class="col-lg-5">
+        <h4 style="font-size:1.1rem;font-weight:700;margin-bottom:16px;" id="slotsTitle">Horarios disponibles</h4>
+        <div id="slotsContainer"><p style="color:var(--gray-500);font-size:.9rem;text-align:center;padding:40px 0;">&#8592; Selecciona una fecha primero</p></div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- Pricing Preview -->
-<section class="pricing-preview">
-  <div class="container">
-    <h2>Nuestros Servicios</h2>
-    <p class="section-sub">Todo lo que necesitas para avanzar en tu carrera aeronáutica. Consulta gratuita incluida.</p>
-
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
-        <div class="price-item">
-          <div>
-            <div class="price-name">Clases de Inglés General</div>
-            <div class="price-desc">Individual online, horarios flexibles, material incluido</div>
-          </div>
-        </div>
-        <div class="price-item">
-          <div>
-            <div class="price-name">Preparación FAA (PPL → ATP)</div>
-            <div class="price-desc">Knowledge Test prep con material completo y simulacros</div>
-          </div>
-        </div>
-        <div class="price-item">
-          <div>
-            <div class="price-name">Inglés Aeronáutico ICAO</div>
-            <div class="price-desc">Preparación Nivel 4+ operacional con práctica ATC</div>
-          </div>
-        </div>
-        <div class="price-item">
-          <div>
-            <div class="price-name">Asesoría Internacional</div>
-            <div class="price-desc">Escuelas de vuelo USA, Canadá, Europa — orientación completa</div>
-          </div>
-        </div>
-        <div class="price-item">
-          <div>
-            <div class="price-name">Paquetes Combinados</div>
-            <div class="price-desc">Combina servicios y ahorra con descuentos especiales</div>
-          </div>
-        </div>
-
-        <div class="text-center mt-4">
-          <a href="/servicios" class="btn btn-primary btn-lg btn-pill">Ver Todos los Servicios →</a>
-        </div>
-      </div>
+    <div style="display:flex;gap:12px;margin-top:24px;">
+      <button class="btn-back" onclick="goToStep(1)">&#8592; Volver</button>
+      <button class="btn-booking" id="btnConfirm" onclick="submitBooking()" disabled>Confirmar Consulta →</button>
     </div>
   </div>
-</section>
 
-<!-- Bottom CTA -->
-<section class="cta-bottom">
-  <div class="container">
-    <h2>¿Tienes Preguntas? Hablemos.</h2>
-    <p>También puedes contactarnos directamente por WhatsApp para una respuesta inmediata.</p>
-    <a href="https://wa.me/56973980874?text=Hola!%20Me%20gustaría%20agendar%20una%20consulta%20gratuita%20con%20AeroBridge" 
-       class="btn-cta-white" target="_blank" rel="noopener noreferrer">
-      Escribir por WhatsApp →
-    </a>
+  <!-- STEP 3 -->
+  <div class="booking-card fade-in" id="step3" style="display:none;">
+    <div class="confirm-card">
+      <div class="check"><svg width="32" height="32" fill="#fff" viewBox="0 0 16 16"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/></svg></div>
+      <h3>¡Consulta Agendada!</h3>
+      <p>Revisa tu email para los detalles y el enlace de Google Meet.</p>
+    </div>
+    <div style="margin-top:24px;padding:20px;background:#f8fafc;border-radius:12px;">
+      <div style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid #e2e8f0;"><span style="font-weight:600;">Nombre</span><span id="conf-name" style="color:var(--text-secondary);"></span></div>
+      <div style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid #e2e8f0;"><span style="font-weight:600;">Fecha</span><span id="conf-date" style="color:var(--text-secondary);"></span></div>
+      <div style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid #e2e8f0;"><span style="font-weight:600;">Hora</span><span id="conf-time" style="color:var(--text-secondary);"></span></div>
+      <div style="display:flex;justify-content:space-between;padding:12px 0;"><span style="font-weight:600;">Interés</span><span id="conf-interest" style="color:var(--text-secondary);"></span></div>
+    </div>
+    <div style="text-align:center;margin-top:20px;"><a href="#" id="conf-meet-link" target="_blank" class="meet-btn"><svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M0 5a2 2 0 0 1 2-2h7.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 4.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 13H2a2 2 0 0 1-2-2V5z"/></svg>Abrir Google Meet</a></div>
+    <div style="text-align:center;margin-top:24px;"><a href="/" class="btn-back" style="text-decoration:none;display:inline-block;">Volver al Inicio</a></div>
   </div>
-</section>
+
+  <div class="trust-strip">
+    <div class="trust-item"><svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M5.338 1.59a61.44 61.44 0 0 0-2.837.856.481.481 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.725 10.725 0 0 0 2.287 2.233c.346.244.652.42.893.533.12.057.218.095.293.118a.55.55 0 0 0 .101.025.615.615 0 0 0 .1-.025c.076-.023.174-.061.294-.118.24-.113.547-.29.893-.533a10.726 10.726 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524z"/></svg>100% Confidencial</div>
+    <div class="trust-item"><svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/></svg>15 min exactos</div>
+    <div class="trust-item"><svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M0 5a2 2 0 0 1 2-2h7.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 4.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 13H2a2 2 0 0 1-2-2V5z"/></svg>Google Meet incluido</div>
+    <div class="trust-item"><svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828z"/><path d="M7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687z"/></svg>Sin compromiso</div>
+  </div>
+</div>
 
 <footer class="footer">
   <div class="container">
     <div class="row">
-      <div class="col-6 col-md-3 mb-4">
-        <h5>Empresa</h5>
-        <ul class="footer-links">
-          <li><a href='/sobrenosotros'>→ Sobre Nosotros</a></li>
-          <li><a href='/contacto'>→ Historia</a></li>
-        </ul>
-      </div>
-      <div class="col-6 col-md-3 mb-4">
-        <h5>Servicios</h5>
-        <ul class="footer-links">
-          <li><a href='/servicios'>→ Nuestros Servicios</a></li>
-          <li><a href="/preparacion-examenes">→ Preparación de Exámenes</a></li>
-          <li><a href='/listadepreciosyservicios'>→ Precios</a></li>
-        </ul>
-      </div>
-      <div class="col-6 col-md-3 mb-4">
-        <h5>Soporte</h5>
-        <ul class="footer-links">
-          <li><a href="/como-empezar">→ Cómo Empezar</a></li>
-          <li><a href='/faq'>→ Preguntas Frecuentes</a></li>
-          <li><a href='/contact'>→ Contacto</a></li>
-        </ul>
-      </div>
-      <div class="col-6 col-md-3 mb-4">
-        <h5>Conéctate</h5>
-        <ul class="footer-links">
-          <li><a href="https://wa.me/56973980874">→ WhatsApp</a></li>
-          <li><a href="mailto:admin@aerobridge.cl">→ Email</a></li>
-          <li><a href="tel:+56973980874">→ Teléfono</a></li>
-        </ul>
-      </div>
+      <div class="col-6 col-md-3 mb-4"><h5>Empresa</h5><ul class="footer-links"><li><a href='/sobrenosotros'>→ Sobre Nosotros</a></li><li><a href='/contacto'>→ Historia</a></li></ul></div>
+      <div class="col-6 col-md-3 mb-4"><h5>Servicios</h5><ul class="footer-links"><li><a href='/servicios'>→ Nuestros Servicios</a></li><li><a href="/preparacion-examenes">→ Preparación de Exámenes</a></li><li><a href='/listadepreciosyservicios'>→ Precios</a></li></ul></div>
+      <div class="col-6 col-md-3 mb-4"><h5>Soporte</h5><ul class="footer-links"><li><a href="/como-empezar">→ Cómo Empezar</a></li><li><a href='/faq'>→ Preguntas Frecuentes</a></li><li><a href='/contact'>→ Contacto</a></li></ul></div>
+      <div class="col-6 col-md-3 mb-4"><h5>Conéctate</h5><ul class="footer-links"><li><a href="https://wa.me/56973980874">→ WhatsApp</a></li><li><a href="mailto:admin@aerobridge.cl">→ Email</a></li><li><a href="tel:+56973980874">→ Teléfono</a></li></ul></div>
     </div>
-    <div class="footer-bottom">
-      <p class="footer-copyright">© 2026 AeroBridge Consulting Chile - Todos los derechos reservados</p>
-    </div>
+    <div class="footer-bottom"><p class="footer-copyright">© 2026 AeroBridge Consulting Chile - Todos los derechos reservados</p></div>
   </div>
 </footer>
 
 <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="assets/theme/js/animations.js"></script>
+<script>
+const API_BASE='https://aerobridge-dashboard.vercel.app/api';
+const MONTHS_ES=['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+const DAYS_ES=['domingo','lunes','martes','miércoles','jueves','viernes','sábado'];
+let currentMonth,currentYear,selectedDate=null,selectedSlot=null,slotsCache={};
+
+function getUTM(){const p=new URLSearchParams(window.location.search);return{utm_source:p.get('utm_source')||'',utm_campaign:p.get('utm_campaign')||'',utm_medium:p.get('utm_medium')||''};}
+
+function goToStep(n){
+  document.querySelectorAll('.booking-card').forEach(c=>c.style.display='none');
+  const s=document.getElementById('step'+n);s.style.display='';s.classList.add('fade-in');
+  document.querySelectorAll('.step-item').forEach((el,i)=>{el.classList.remove('active','completed');if(i+1<n)el.classList.add('completed');if(i+1===n)el.classList.add('active');});
+  window.scrollTo({top:200,behavior:'smooth'});
+}
+
+function goToStep2(){
+  const n=document.getElementById('b-name').value.trim(),e=document.getElementById('b-email').value.trim(),p=document.getElementById('b-phone').value.trim(),i=document.getElementById('b-interest').value;
+  if(!n||!e||!p||!i){alert('Por favor completa todos los campos obligatorios.');return;}
+  if(!/\S+@\S+\.\S+/.test(e)){alert('Por favor ingresa un email válido.');return;}
+  const now=new Date();currentMonth=now.getMonth();currentYear=now.getFullYear();renderCalendar();goToStep(2);
+}
+
+function renderCalendar(){
+  document.getElementById('calMonthLabel').textContent=MONTHS_ES[currentMonth]+' '+currentYear;
+  const grid=document.getElementById('calGrid'),dows=Array.from(grid.querySelectorAll('.cal-dow'));
+  grid.innerHTML='';dows.forEach(d=>grid.appendChild(d));
+  const first=new Date(currentYear,currentMonth,1);let start=first.getDay()-1;if(start<0)start=6;
+  const days=new Date(currentYear,currentMonth+1,0).getDate(),today=new Date();today.setHours(0,0,0,0);
+  for(let i=0;i<start;i++){const e=document.createElement('div');e.className='cal-day disabled';grid.appendChild(e);}
+  for(let d=1;d<=days;d++){
+    const dt=new Date(currentYear,currentMonth,d),ds=dt.toISOString().split('T')[0],wk=dt.getDay()===0||dt.getDay()===6,past=dt<today,td=dt.getTime()===today.getTime(),sel=ds===selectedDate;
+    const el=document.createElement('div');el.className='cal-day';el.textContent=d;
+    if(wk||past)el.classList.add('disabled');if(wk)el.classList.add('weekend');if(td)el.classList.add('today');if(sel)el.classList.add('selected');
+    if(!wk&&!past)el.onclick=()=>selectDate(ds);
+    grid.appendChild(el);
+  }
+}
+
+function changeMonth(dir){
+  currentMonth+=dir;if(currentMonth>11){currentMonth=0;currentYear++;}if(currentMonth<0){currentMonth=11;currentYear--;}
+  const now=new Date();if(currentYear<now.getFullYear()||(currentYear===now.getFullYear()&&currentMonth<now.getMonth())){currentMonth=now.getMonth();currentYear=now.getFullYear();}
+  renderCalendar();
+}
+
+async function selectDate(ds){
+  selectedDate=ds;selectedSlot=null;document.getElementById('btnConfirm').disabled=true;renderCalendar();
+  const dt=new Date(ds+'T12:00:00');
+  document.getElementById('slotsTitle').textContent=DAYS_ES[dt.getDay()]+' '+dt.getDate()+' de '+MONTHS_ES[dt.getMonth()];
+  const c=document.getElementById('slotsContainer');
+  c.innerHTML='<div style="text-align:center;padding:40px;color:var(--gray-500);"><div class="spinner-border spinner-border-sm text-primary"></div><p style="margin-top:8px;">Cargando horarios...</p></div>';
+  try{
+    let slots;if(slotsCache[ds])slots=slotsCache[ds];else{const r=await fetch(API_BASE+'/available-slots?date='+ds);const d=await r.json();slots=d.slots||[];slotsCache[ds]=slots;}
+    if(!slots.length){c.innerHTML='<p style="color:var(--brand-secondary);text-align:center;padding:30px;font-weight:600;">No hay horarios disponibles.<br><small style="font-weight:400;color:var(--gray-500);">Prueba con otra fecha.</small></p>';return;}
+    c.innerHTML='<div class="slots-grid">'+slots.map(s=>'<div class="slot" onclick="selectSlot(this,\''+s+'\')">'+s+'</div>').join('')+'</div>';
+  }catch(e){c.innerHTML='<p style="color:var(--brand-secondary);text-align:center;padding:30px;">Error al cargar horarios.</p>';}
+}
+
+function selectSlot(el,t){document.querySelectorAll('.slot').forEach(s=>s.classList.remove('selected'));el.classList.add('selected');selectedSlot=t;document.getElementById('btnConfirm').disabled=false;}
+
+async function submitBooking(){
+  if(!selectedDate||!selectedSlot)return;
+  const btn=document.getElementById('btnConfirm');btn.disabled=true;btn.textContent='Agendando...';
+  const nm=document.getElementById('b-name').value.trim(),em=document.getElementById('b-email').value.trim(),ph=document.getElementById('b-phone').value.trim(),int=document.getElementById('b-interest').value,msg=document.getElementById('b-message').value.trim(),utm=getUTM();
+  try{
+    const r=await fetch(API_BASE+'/create-consultation',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({studentName:nm,studentEmail:em,consultationDate:selectedDate,consultationTime:selectedSlot,phone:ph,interest:int,message:msg,...utm})});
+    const d=await r.json();if(!d.success)throw new Error(d.error||'Error');
+    // Google Ads conversion
+    if(typeof gtag==='function'){gtag('event','conversion',{send_to:'AW-18028243819/consultation_scheduled',value:1.0,currency:'CLP'});}
+    const dt=new Date(selectedDate+'T'+selectedSlot+':00');
+    document.getElementById('conf-name').textContent=nm;
+    document.getElementById('conf-date').textContent=DAYS_ES[dt.getDay()]+' '+dt.getDate()+' de '+MONTHS_ES[dt.getMonth()]+', '+dt.getFullYear();
+    document.getElementById('conf-time').textContent=selectedSlot+' hrs (Chile)';
+    document.getElementById('conf-interest').textContent=int;
+    const ml=d.meetLink||'https://meet.google.com',mb=document.getElementById('conf-meet-link');mb.href=ml;if(ml==='https://meet.google.com')mb.style.display='none';
+    goToStep(3);
+  }catch(e){alert('Error al agendar: '+(e.message||'Intenta de nuevo'));btn.disabled=false;btn.textContent='Confirmar Consulta →';}
+}
+</script>
 </body>
 </html>
