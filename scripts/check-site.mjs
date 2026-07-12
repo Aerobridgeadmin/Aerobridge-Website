@@ -92,7 +92,7 @@ try {
   const available = dashboardPrograms.filter((program) => program.status === 'available').map((program) => program.title)
   if (available.join('|') !== 'ICAO Aviation English|Pilot Licence Theory') fail(`available programs changed: ${available.join(', ')}`)
   const beta = dashboardPrograms.filter((program) => program.releaseStage === 'beta').map((program) => program.title)
-  if (beta.join('|') !== 'Pilot Licence Theory') fail(`beta programs changed: ${beta.join(', ')}`)
+  if (beta.length) fail(`no program may carry a beta stage; found: ${beta.join(', ')}`)
 
   const countryCodes = dashboardPacks.map((pack) => pack.iso2)
   if (countryCodes.join(',') !== 'CL') fail(`marketing country scope is stale; dashboard packs are now: ${countryCodes.join(', ')}`)

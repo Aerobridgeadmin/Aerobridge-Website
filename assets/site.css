@@ -338,6 +338,11 @@ strong {
   object-fit: cover;
 }
 
+.site-header .brand img {
+  width: 58px;
+  height: 58px;
+}
+
 .brand-text {
   display: grid;
   gap: 1px;
@@ -832,6 +837,13 @@ strong {
   height: 100%;
 }
 
+.model-strip {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 30px;
+}
+
 .founder-photo::after {
   position: absolute;
   right: -14px;
@@ -951,14 +963,9 @@ strong {
 }
 
 .notice {
-  padding: 24px 26px;
-  border-left: 3px solid var(--blue-600);
-  background: var(--paper-blue);
-}
-
-.notice.warning {
-  border-left-color: var(--amber);
-  background: #f7f0e7;
+  padding: 20px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
 
 .notice p:last-child {

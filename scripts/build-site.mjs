@@ -30,10 +30,10 @@ const PROGRAMS = [
   },
   {
     code: 'AB-PEL-PILOT',
-    status: 'Available in beta',
-    statusClass: 'status-beta',
+    status: 'Available',
+    statusClass: '',
     title: 'Pilot Licence Theory',
-    description: 'Study rules of the air, aircraft knowledge, performance, navigation and operations. The program is in beta, with more lessons on the way.',
+    description: 'Study rules of the air, aircraft knowledge, performance, navigation and operations, with new lessons in development.',
     basis: 'ICAO Annexes 1 and 2 with country references',
     access: 'Learner platform',
   },
@@ -99,13 +99,13 @@ function header(currentPath) {
   <div class="site-signal">
     <div class="container signal-inner">
       <span class="signal-status">Available now</span>
-      <span>Aviation English worldwide. Pilot Theory in beta. DGAC guidance for Chile.</span>
+      <span>Aviation English and Pilot Theory online. DGAC guidance for Chile.</span>
     </div>
   </div>
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="/" aria-label="Aerobridge home">
-        <img src="/assets/images/aerobridge-logo.png" alt="" width="46" height="46">
+        <img src="/assets/images/aerobridge-logo.png" alt="" width="58" height="58">
         <span class="brand-text"><strong>AEROBRIDGE</strong><small>Aviation training</small></span>
       </a>
       <nav class="site-nav" aria-label="Main navigation" data-site-nav data-open="false">
@@ -225,6 +225,28 @@ function pageHero({ eyebrow, title, lede }) {
 
 // Original Aerobridge route-chart artwork: Santiago as the departure point,
 // international routes outbound. Drawn in brand colours; no stock imagery.
+
+// Original slim route strip for the dark model section: three waypoints on
+// one track, mirroring the 01/02/03 steps beneath it.
+function modelStrip() {
+  return `<svg class="model-strip" viewBox="0 0 800 64" role="img" aria-label="Route from core knowledge through country references to your training path" xmlns="http://www.w3.org/2000/svg">
+    <path d="M24 40 H776" stroke="rgba(135,206,235,0.22)" stroke-width="1.5"/>
+    <path d="M24 40 H776" stroke="#87CEEB" stroke-width="2" stroke-dasharray="6 10" opacity="0.65"/>
+    <g fill="#D64541">
+      <circle cx="24" cy="40" r="6"/>
+    </g>
+    <g fill="#87CEEB">
+      <path d="M400 33 l6 11 h-12 z"/>
+      <path d="M776 33 l6 11 h-12 z"/>
+    </g>
+    <g font-family="Montserrat, sans-serif" font-size="11" font-weight="700" letter-spacing="2" fill="rgba(135,206,235,0.75)">
+      <text x="24" y="18">01 CORE</text>
+      <text x="400" y="18" text-anchor="middle">02 COUNTRY</text>
+      <text x="776" y="18" text-anchor="end">03 PATH</text>
+    </g>
+  </svg>`
+}
+
 function routeChart() {
   return `<svg viewBox="0 0 800 550" role="img" aria-label="Aeronautical route chart with departures from Santiago to international destinations" xmlns="http://www.w3.org/2000/svg">
     <rect width="800" height="550" fill="#062354"/>
@@ -361,7 +383,7 @@ const pages = [
             <h1>Study aviation with the <span class="accent">right rules in view.</span></h1>
             <p class="lede">Build operational English and pilot knowledge through online lessons based on recognised aviation frameworks. Learners in Chile can also access DGAC licensing and exam references.</p>
             ${buttonRow({ primaryHref: '/services', primaryLabel: 'Explore current programs', secondaryHref: SITE.dashboard, secondaryLabel: 'Open learner platform' })}
-            <div class="hero-proof"><span>30 Aviation English lessons</span><span>Pilot Theory in beta</span><span>Chile DGAC references</span></div>
+            <div class="hero-proof"><span>30 Aviation English lessons</span><span>Pilot Theory online</span><span>Chile DGAC references</span></div>
           </div>
           <figure class="hero-visual">
             <img src="/assets/images/img-903.jpeg" alt="Pilot training in the cockpit of a light aircraft" width="1920" height="1440">
@@ -382,7 +404,7 @@ const pages = [
         <div class="container">
           <div class="section-heading">
             <div><span class="eyebrow">Programs</span><h2>Choose the program that matches your next step.</h2></div>
-            <p>Aviation English is fully published. Pilot Theory is available in beta, with more lessons on the way.</p>
+            <p>Aviation English is fully published. Pilot Theory is live, with new lessons in development.</p>
           </div>
           ${programRows()}
           <div class="button-row"><a class="text-link" href="/services">See program detail</a></div>
@@ -396,6 +418,7 @@ const pages = [
             <h2 class="heading-on-dark">One course layer. One country layer.</h2>
             <p>Core aviation subjects travel across borders. Licensing procedures and exams do not. Aerobridge keeps course content and country guidance separate, so you can see which rules apply.</p>
           </div>
+          ${modelStrip()}
           <div class="architecture" aria-label="Aerobridge training architecture">
             <article class="architecture-step"><span class="architecture-number">01 / CORE</span><h3>ICAO-aligned knowledge</h3><p>Communication, rules of the air, aircraft knowledge, navigation, performance and operations.</p></article>
             <article class="architecture-step"><span class="architecture-number">02 / COUNTRY</span><h3>Authority references</h3><p>Licensing, medical, exam and practical standards tracked to the relevant source and revision.</p></article>
@@ -445,12 +468,12 @@ const pages = [
     title: 'Programs',
     description: 'Explore the current Aerobridge training programs: ICAO Aviation English and Pilot Licence Theory, plus the clearly labelled program roadmap.',
     body: `
-      ${pageHero({ eyebrow: 'Programs', title: 'Start with Aviation English or Pilot Licence Theory.', lede: 'Both programs are available online. Pilot Licence Theory is in beta, with new lessons being added.' })}
+      ${pageHero({ eyebrow: 'Programs', title: 'Start with Aviation English or Pilot Licence Theory.', lede: 'Both programs are available online, and the Pilot Theory curriculum keeps growing.' })}
       <section class="section section-white"><div class="container"><div class="section-heading"><div><span class="eyebrow">Available in the platform</span><h2>Current learner programs</h2></div><p>Each program has its own curriculum, lesson records and progress model.</p></div>${programRows()}${buttonRow({ primaryHref: SITE.signup, primaryLabel: 'Create learner account', secondaryHref: SITE.login, secondaryLabel: 'Learner sign in' })}</div></section>
       <section class="section section-blue"><div class="container content-stack">
         <div class="content-block"><h2>What learners can do</h2><div class="content-block-body"><ul class="plain-list"><li>Work through published lessons by program and module.</li><li>Use Aviation English practice formats for structured speaking rehearsal.</li><li>Review learning progress and published resources.</li><li>Check authority and country references in Requirements.</li><li>See clearly when a lesson or capability is still coming soon.</li></ul></div></div>
         <div class="content-block"><h2>In development</h2><div class="content-block-body"><p>Future catalog work covers ${PLANNED_PROGRAMS.slice(0, -1).join(', ')}, and ${PLANNED_PROGRAMS.at(-1)}. These programs are not open for enrolment yet.</p></div></div>
-        <div class="content-block"><h2>Before you enrol</h2><div class="content-block-body"><div class="notice warning"><p>Pilot Licence Theory is in beta. Practice scorecards support rehearsal and do not provide an official language assessment. Country-specific licensing guidance is available for Chile.</p></div></div></div>
+        <div class="content-block"><h2>Before you enrol</h2><div class="content-block-body"><div class="notice"><p>Practice scorecards support rehearsal and do not provide an official language assessment. Country-specific licensing guidance is available for Chile.</p></div></div></div>
       </div></section>
       ${ctaBand({ title: 'Which program fits your goal?', text: 'Tell us what you are preparing for and where you train.' })}
     `,
@@ -464,7 +487,7 @@ const pages = [
       ${pageHero({ eyebrow: 'Preparation and requirements', title: 'Prepare against the right standard.', lede: 'Aerobridge teaches aviation knowledge and English skills that can be used internationally, with separate country guidance where available. The first local pack covers DGAC Chile.' })}
       <section class="section section-white"><div class="container content-stack">
         <div class="content-block"><h2>ICAO Aviation English</h2><div class="content-block-body"><p class="lede">The available course develops speaking and listening across the six ICAO language proficiency descriptors.</p><ul class="check-list"><li>Pronunciation</li><li>Structure</li><li>Vocabulary</li><li>Fluency</li><li>Comprehension</li><li>Interaction</li></ul><div class="notice space-top-md"><strong>Level 4 is the minimum operational proficiency level.</strong><p>Your authority decides which tests it accepts and how long results remain valid.</p></div></div></div>
-        <div class="content-block"><h2>Pilot Licence Theory</h2><div class="content-block-body"><p>Study the core subjects behind pilot licence theory: rules of the air, aircraft knowledge, performance, navigation and operations. DGAC references are included for Chile.</p><p>Pilot Theory is in beta. Two United States reference modules are included, but this is not an FAA exam-preparation course.</p></div></div>
+        <div class="content-block"><h2>Pilot Licence Theory</h2><div class="content-block-body"><p>Study the core subjects behind pilot licence theory: rules of the air, aircraft knowledge, performance, navigation and operations. DGAC references are included for Chile.</p><p>Two United States reference modules are included for context, but this is not an FAA exam-preparation course.</p></div></div>
         <div class="content-block"><h2>Practice formats</h2><div class="content-block-body"><p>Aviation English exercises follow common oral assessment flows. Scorecards provide practice feedback only. They do not analyse recorded audio or produce an official rating.</p><div class="notice warning"><strong>A note on certification</strong><p>Aerobridge supports study and practice. Licences and official language ratings are issued by the relevant authority or approved provider.</p></div></div></div>
       </div></section>
       <section class="section section-blue"><div class="container country-grid"><div class="country-intro"><span class="eyebrow">Country requirements</span><span class="big-code">CL</span><h2>Chile is the first published country pack.</h2><p>Country-specific licensing guidance is not yet available outside Chile.</p><ul class="pathway-list">${CHILE.pathways.map((pathway) => `<li>${pathway}</li>`).join('')}</ul></div><div>${regulatoryRows()}<div class="notice warning space-top-md"><strong>DAN 141 is not included yet.</strong><p>The current training-organisation standard is still being reviewed.</p></div></div></div></section>
@@ -490,7 +513,7 @@ const pages = [
     description: 'Aerobridge program access and pricing information. Online billing is not currently connected, so access questions are handled directly.',
     body: `
       ${pageHero({ eyebrow: 'Access', title: 'Access for learners and organisations.', lede: 'Contact Aerobridge for individual or organisation access. We will confirm the program, scope and price directly.' })}
-      <section class="section section-white"><div class="container"><div class="section-heading"><div><span class="eyebrow">Access options</span><h2>Choose the setup that fits.</h2></div><p>Pricing is quoted by program and, for organisations, by the number of learners.</p></div><div class="plan-list"><article class="plan-row"><div><h3>Learner access</h3><p>Individual training.</p></div><div><p>Access to ICAO Aviation English or Pilot Licence Theory. Pilot Theory is in beta.</p></div><div class="plan-price"><strong>Request current price</strong><small>Quoted directly</small></div></article><article class="plan-row"><div><h3>Organisation access</h3><p>Schools and training teams.</p></div><div><p>Access scoped by program, number of learners and the tools your team needs.</p></div><div class="plan-price"><strong>Request a quote</strong><small>Scoped directly</small></div></article></div><p class="source-note">Online checkout is not available yet. We will confirm access and payment details directly.</p>${buttonRow({ primaryHref: '/free-consultation', primaryLabel: 'Ask about access', secondaryHref: SITE.dashboard, secondaryLabel: 'Open platform' })}</div></section>
+      <section class="section section-white"><div class="container"><div class="section-heading"><div><span class="eyebrow">Access options</span><h2>Choose the setup that fits.</h2></div><p>Pricing is quoted by program and, for organisations, by the number of learners.</p></div><div class="plan-list"><article class="plan-row"><div><h3>Learner access</h3><p>Individual training.</p></div><div><p>Access to ICAO Aviation English or Pilot Licence Theory.</p></div><div class="plan-price"><strong>Request current price</strong><small>Quoted directly</small></div></article><article class="plan-row"><div><h3>Organisation access</h3><p>Schools and training teams.</p></div><div><p>Access scoped by program, number of learners and the tools your team needs.</p></div><div class="plan-price"><strong>Request a quote</strong><small>Scoped directly</small></div></article></div><p class="source-note">Online checkout is not available yet. We will confirm access and payment details directly.</p>${buttonRow({ primaryHref: '/free-consultation', primaryLabel: 'Ask about access', secondaryHref: SITE.dashboard, secondaryLabel: 'Open platform' })}</div></section>
       ${ctaBand({ title: 'Tell us what you need.', text: 'Share the program, country and number of learners. We will reply with the current access options.' })}
     `,
   },
@@ -501,7 +524,7 @@ const pages = [
     description: 'Aerobridge is a Chile-first aviation training platform built around an ICAO-aligned core and versioned country authority references.',
     body: `
       ${pageHero({ eyebrow: 'About Aerobridge', title: 'A training platform built from two layers.', lede: 'The first layer is shared aviation knowledge. The second is the authority-specific material that changes by country. Keeping them separate makes the product clearer and easier to maintain.' })}
-      <section class="section section-white"><div class="container content-stack"><div class="content-block"><h2>Mission</h2><div class="content-block-body"><p class="lede">Make aviation study clearer by connecting ICAO-aligned knowledge with the national rules a learner must actually follow.</p><p>Aerobridge is designed for learners and training organisations. It provides preparation, practice, curriculum and regulatory references in one product.</p></div></div><div class="content-block"><h2>Current reality</h2><div class="content-block-body"><p>ICAO Aviation English is published. Pilot Licence Theory is available in beta and still expanding. Chile DGAC is the only active country pack. Five other program areas are planned.</p><p>That scope is intentionally stated in plain language throughout the site.</p></div></div><div class="content-block"><h2>Boundaries</h2><div class="content-block-body"><ul class="plain-list"><li>Aerobridge prepares and supports. It does not issue pilot licences.</li><li>Aerobridge does not certify ICAO language levels.</li><li>Authorities and approved organisations control official examinations.</li><li>Country references are planning aids and must be confirmed against the latest official publication.</li><li>Future programs and country packs are labelled before they are available.</li></ul></div></div><div class="content-block"><h2>Product principles</h2><div class="content-block-body"><ul class="plain-list"><li>One shared aviation core, with no duplicated country curriculum.</li><li>One versioned source record for each authority reference.</li><li>Clear labels for available, beta, planned and pending content.</li><li>Practical study flows instead of a generic library of documents.</li></ul></div></div></div></section>
+      <section class="section section-white"><div class="container content-stack"><div class="content-block"><h2>Mission</h2><div class="content-block-body"><p class="lede">Make aviation study clearer by connecting ICAO-aligned knowledge with the national rules a learner must actually follow.</p><p>Aerobridge is designed for learners and training organisations. It provides preparation, practice, curriculum and regulatory references in one product.</p></div></div><div class="content-block"><h2>Current reality</h2><div class="content-block-body"><p>ICAO Aviation English is published. Pilot Licence Theory is live and still expanding. Chile DGAC is the only active country pack. Five other program areas are planned.</p><p>That scope is intentionally stated in plain language throughout the site.</p></div></div><div class="content-block"><h2>Boundaries</h2><div class="content-block-body"><ul class="plain-list"><li>Aerobridge prepares and supports. It does not issue pilot licences.</li><li>Aerobridge does not certify ICAO language levels.</li><li>Authorities and approved organisations control official examinations.</li><li>Country references are planning aids and must be confirmed against the latest official publication.</li><li>Future programs and country packs are labelled before they are available.</li></ul></div></div><div class="content-block"><h2>Product principles</h2><div class="content-block-body"><ul class="plain-list"><li>One shared aviation core, with no duplicated country curriculum.</li><li>One versioned source record for each authority reference.</li><li>Clear labels for available, planned and pending content.</li><li>Practical study flows instead of a generic library of documents.</li></ul></div></div></div></section>
       ${ctaBand({ title: 'See the model in the learner platform.', text: 'Open the current program catalog or ask how the Chile pack fits your licence path.', href: SITE.dashboard, label: 'Open Aerobridge' })}
     `,
   },
@@ -526,7 +549,7 @@ const pages = [
       ${pageHero({ eyebrow: 'FAQ', title: 'Straight answers about what Aerobridge does today.', lede: 'The product is in active development. These answers separate current capability from the roadmap.' })}
       <section class="section section-white"><div class="narrow">
         <div class="faq-group"><h2>Programs and access</h2><div class="faq-list">
-          <details open><summary>What programs are available?</summary><div class="faq-answer"><p>ICAO Aviation English and Pilot Licence Theory. The English program has six modules and 30 published lessons. Pilot Theory is available in beta, with later lessons still being completed.</p></div></details>
+          <details open><summary>What programs are available?</summary><div class="faq-answer"><p>ICAO Aviation English and Pilot Licence Theory. The English program has six modules and 30 published lessons. Pilot Theory is live, with later lessons still being completed.</p></div></details>
           <details><summary>Can I use Aerobridge outside Chile?</summary><div class="faq-answer"><p>Yes for the shared programs, especially ICAO Aviation English. However, Chile is the only active country pack. Do not rely on Aerobridge for another country's licensing requirements until that pack is published.</p></div></details>
           <details><summary>How do I create an account?</summary><div class="faq-answer"><p>Use the learner sign-up page in the dashboard. Once your access is active, sign in and open Programs.</p></div></details>
           <details><summary>Is pricing published?</summary><div class="faq-answer"><p>No. Billing, invoices and online payment plans are not connected. Contact Aerobridge for current access information.</p></div></details>
@@ -563,7 +586,7 @@ const pages = [
     description: 'Request a 15-minute Aerobridge consultation by WhatsApp about Aviation English, Pilot Theory, Chile DGAC requirements or organisation access.',
     body: `
       ${pageHero({ eyebrow: '15-minute consultation', title: 'Tell us the country, authority and goal first.', lede: 'Send a concise request and Aerobridge will confirm an available time directly.' })}
-      <section class="section section-blue"><div class="container request-grid"><aside class="request-aside"><span class="eyebrow">What we can clarify</span><h2>A useful first conversation.</h2><ul class="plain-list"><li>Which of the two current programs fits your goal.</li><li>What the Chile DGAC country pack covers.</li><li>Whether your non-Chile requirement is supported today.</li><li>What is available now and what remains in beta.</li><li>How organisation access currently works.</li></ul><div class="notice warning space-top-md"><strong>No certification promise</strong><p>The conversation is for training and planning. Official approval stays with the relevant authority or approved organisation.</p></div></aside>${consultationForm()}</div></section>
+      <section class="section section-blue"><div class="container request-grid"><aside class="request-aside"><span class="eyebrow">What we can clarify</span><h2>A useful first conversation.</h2><ul class="plain-list"><li>Which of the two current programs fits your goal.</li><li>What the Chile DGAC country pack covers.</li><li>Whether your non-Chile requirement is supported today.</li><li>What is available now and what is still planned.</li><li>How organisation access currently works.</li></ul><div class="notice warning space-top-md"><strong>No certification promise</strong><p>The conversation is for training and planning. Official approval stays with the relevant authority or approved organisation.</p></div></aside>${consultationForm()}</div></section>
       ${ctaBand({ title: 'Prefer email?', text: `Write to ${SITE.email} with your country and current goal.`, href: `mailto:${SITE.email}`, label: 'Email Aerobridge' })}
     `,
   },
