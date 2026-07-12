@@ -1,0 +1,29 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/sobrenosotros", "destination": "/about", "permanent": true },
+    { "source": "/contacto", "destination": "/history", "permanent": true },
+    { "source": "/servicios", "destination": "/services", "permanent": true },
+    { "source": "/preparacion-examenes", "destination": "/exam-preparation", "permanent": true },
+    { "source": "/listadepreciosyservicios", "destination": "/pricing", "permanent": true },
+    { "source": "/como-empezar", "destination": "/get-started", "permanent": true },
+    { "source": "/consulta-gratis", "destination": "/free-consultation", "permanent": true },
+    { "source": "/success", "destination": "/contact", "permanent": false }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=604800" }]
+    }
+  ]
+}

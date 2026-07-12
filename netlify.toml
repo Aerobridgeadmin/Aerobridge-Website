@@ -3,13 +3,38 @@
 
 # Clean URLs for all pages
 [[redirects]]
-  from = "/sobrenosotros"
-  to = "/sobrenosotros.html"
+  from = "/about"
+  to = "/about.html"
   status = 200
 
 [[redirects]]
-  from = "/servicios"
-  to = "/servicios.html"
+  from = "/history"
+  to = "/history.html"
+  status = 200
+
+[[redirects]]
+  from = "/services"
+  to = "/services.html"
+  status = 200
+
+[[redirects]]
+  from = "/exam-preparation"
+  to = "/exam-preparation.html"
+  status = 200
+
+[[redirects]]
+  from = "/pricing"
+  to = "/pricing.html"
+  status = 200
+
+[[redirects]]
+  from = "/get-started"
+  to = "/get-started.html"
+  status = 200
+
+[[redirects]]
+  from = "/free-consultation"
+  to = "/free-consultation.html"
   status = 200
 
 [[redirects]]
@@ -22,30 +47,41 @@
   to = "/faq.html"
   status = 200
 
+# Redirects from the old Spanish URLs
+[[redirects]]
+  from = "/sobrenosotros"
+  to = "/about"
+  status = 301
+
 [[redirects]]
   from = "/contacto"
-  to = "/contacto.html"
-  status = 200
+  to = "/history"
+  status = 301
 
 [[redirects]]
-  from = "/listadepreciosyservicios"
-  to = "/listadepreciosyservicios.html"
-  status = 200
-
-[[redirects]]
-  from = "/como-empezar"
-  to = "/como-empezar.html"
-  status = 200
+  from = "/servicios"
+  to = "/services"
+  status = 301
 
 [[redirects]]
   from = "/preparacion-examenes"
-  to = "/preparacion-examenes.html"
-  status = 200
+  to = "/exam-preparation"
+  status = 301
+
+[[redirects]]
+  from = "/listadepreciosyservicios"
+  to = "/pricing"
+  status = 301
+
+[[redirects]]
+  from = "/como-empezar"
+  to = "/get-started"
+  status = 301
 
 [[redirects]]
   from = "/consulta-gratis"
-  to = "/consulta-gratis.html"
-  status = 200
+  to = "/free-consultation"
+  status = 301
 
 # Form success page
 [[redirects]]
